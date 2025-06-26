@@ -163,7 +163,7 @@ const ChatBot = () => {
       )}
 
       {isOpen && (
-        <div className="bg-white rounded-xl shadow-2xl w-96 h-[40rem] flex flex-col border border-gray-200 backdrop-blur-sm">
+        <div className="bg-white rounded-xl shadow-2xl w-[90vw] max-w-md h-[70vh] flex flex-col border border-gray-200 backdrop-blur-sm sm:w-96 sm:h-[40rem]">
           {/* Header */}
           <div className="bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-white p-4 rounded-t-xl flex justify-between items-center shadow-lg">
             <div className="flex items-center space-x-3">
@@ -173,7 +173,7 @@ const ChatBot = () => {
               </div>
               <div>
                 <span className="font-semibold text-sm">Chat Support</span>
-                <p className="text-xs text-blue-100">Always here to help</p>
+                <p className="text-xs text-white">Always here to help</p>
               </div>
             </div>
             <div className="flex space-x-1">
