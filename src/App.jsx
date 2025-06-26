@@ -15,10 +15,10 @@ import CEO from "./Components/AboutComponents/CEO";
 import AnimatedIntro from "./Components/HelperComponents/AnimatedIntro";
 import ScholarhipMain from "./Components/ServicesComponents/ScholarhipMain";
 import Consulting from "./Components/ServicesComponents/Consulting";
-
 import ScrollToTop from "./Components/HelperComponents/ScrollToTop";
 import OurTeamsCopy from "./Components/AboutComponents/OurTeamsCopy";
 import FAQmain from "./Components/FAQComponents/FAQmain";
+import ChatBot from "./Components/ChatComponents/ChatBot";
 
 const mainContentVariants = {
   hidden: {
@@ -38,26 +38,24 @@ const mainContentVariants = {
 
 function App() {
   const [showMainContent, setShowMainContent] = useState(false);
-
   useEffect(() => {
     // Match the timing with AnimatedIntro exit animation
     const timer = setTimeout(() => setShowMainContent(true), 4800); // 4.8s total
     return () => clearTimeout(timer);
   }, []);
-
   return (
     <div className="min-h-screen">
       {/* <AnimatePresence mode="wait">
-        {!showMainContent ? (
-          <AnimatedIntro key="intro" />
-        ) : (
-          <motion.div
-            key="main"
-            variants={mainContentVariants}
-            initial="hidden"
-            animate="visible"
-            className="min-h-screen"
-          > */}
+ {!showMainContent ? (
+ <AnimatedIntro key="intro" />
+ ) : (
+ <motion.div
+ key="main"
+ variants={mainContentVariants}
+ initial="hidden"
+ animate="visible"
+ className="min-h-screen"
+ > */}
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -70,16 +68,18 @@ function App() {
         <Route path="/services/consulting" element={<Consulting />} />
         <Route path="/services/scholarship" element={<ScholarhipMain />} />
         <Route path="/services/faq" element={<FAQmain />} />
-
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
+
+      {/* ChatBot - Will appear on all pages */}
+      <ChatBot />
+
       {/* </motion.div> */}
       {/* )} */}
       {/* </AnimatePresence */}
     </div>
   );
 }
-
 export default App;
