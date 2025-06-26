@@ -1,0 +1,26 @@
+import React from "react";
+import MainServices from "./ServiceMainComponents/MainServices";
+import ServicesContent from "./ServiceMainComponents/ServicesContent";
+import Motto from "./ServiceMainComponents/Motto";
+import Universities from "./ServiceMainComponents/Universities";
+import Scholarship from "./ServiceMainComponents/Scholarship";
+import Why from "./ServiceMainComponents/Why";
+import FAQ from "./ServiceMainComponents/FAQ";
+
+export default function ServiceMain() {
+  return (
+    <div>
+      <MainServices />
+
+      {/* <ServicesContent2 /> */}
+      <ServicesContent />
+      <div className="text-white bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] rounded-4xl">
+        <Motto />
+      </div>
+      <Why />
+      <Universities />
+      <Scholarship />
+      <FAQ />
+    </div>
+  );
+}

@@ -1,0 +1,25 @@
+import React from "react";
+import NewServicesContent from "../ServiceMainComponents/NewServicesContent";
+
+export default function Types() {
+  return (
+    <>
+      <div className="container mx-auto pb-12">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+            Types of{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B]">
+              Scholarship
+            </span>
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-extralight">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
+            illo rerum laboriosam alias id consequatur repellendus debitis
+            adipisci? Non, consectetur.
+          </p>
+        </div>
+        <NewServicesContent />
+      </div>
+    </>
+  );
+}
