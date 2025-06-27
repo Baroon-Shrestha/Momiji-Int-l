@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import LazyMotionItem from "../HelperComponents/LazyMotionItem";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function FullGallery() {
   const [layoutType] = useState("improved-masonry");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   const imageModules = import.meta.glob(
     "../../assets/Images/*.{jpeg,jpg,avif,mp4}",
@@ -17,6 +20,24 @@ export default function FullGallery() {
       type: ext === "mp4" ? "video" : "image",
     };
   });
+
+  const openModal = (index) => {
+    setSelectedIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedIndex(null);
+  };
+
+  const nextMedia = () => {
+    setSelectedIndex((prev) => (prev + 1) % mediaFiles.length);
+  };
+
+  const prevMedia = () => {
+    setSelectedIndex((prev) => (prev === 0 ? mediaFiles.length - 1 : prev - 1));
+  };
 
   const createImprovedMasonry = (media) => {
     const columns = [[], [], [], []];
@@ -43,7 +64,16 @@ export default function FullGallery() {
   };
 
   const renderImprovedMasonry = () => {
-    const columns = createImprovedMasonry(mediaFiles);
+    const columns = [[], [], [], []];
+
+    mediaFiles.forEach((file, i) => {
+      const shortestIndex = columns.reduce(
+        (minIndex, col, index, arr) =>
+          col.length < arr[minIndex].length ? index : minIndex,
+        0
+      );
+      columns[shortestIndex].push({ ...file, index: i });
+    });
 
     return (
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -55,8 +85,14 @@ export default function FullGallery() {
             animate="show"
             className="flex flex-col gap-4"
           >
-            {column.map((file, index) => (
-              <LazyMotionItem key={index} type={file.type} src={file.src} />
+            {column.map((file) => (
+              <div
+                key={file.index}
+                className="cursor-pointer"
+                onClick={() => openModal(file.index)}
+              >
+                <LazyMotionItem type={file.type} src={file.src} />
+              </div>
             ))}
           </motion.div>
         ))}
@@ -68,7 +104,6 @@ export default function FullGallery() {
     <>
       <div className="">
         <section className="relative w-full bg-gradient-to-r from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white overflow-hidden">
-          {/* Optional background image with overlay */}
           <div className="absolute inset-0 z-0">
             <img
               src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1920&q=80"
@@ -78,8 +113,7 @@ export default function FullGallery() {
             <div className="absolute inset-0 bg-black opacity-50"></div>
           </div>
 
-          {/* Content */}
-          <div className=" relative z-10 container mx-auto px-4 py-20 flex flex-col items-center text-center">
+          <div className="relative z-10 container mx-auto px-4 py-20 flex flex-col items-center text-center">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
               Gallery
             </h1>
@@ -99,6 +133,48 @@ export default function FullGallery() {
           </div>
         </div>
       </div>
+
+      {/* MODAL SECTION */}
+      {isModalOpen && selectedIndex !== null && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4">
+          <button
+            onClick={closeModal}
+            className="absolute top-5 right-5 text-white hover:text-red-400"
+          >
+            <X size={30} />
+          </button>
+
+          <button
+            onClick={prevMedia}
+            className="absolute left-5 text-white hover:scale-110"
+          >
+            <ChevronLeft size={40} />
+          </button>
+
+          <div className="max-w-5xl max-h-[90vh] mx-auto">
+            {mediaFiles[selectedIndex].type === "image" ? (
+              <img
+                src={mediaFiles[selectedIndex].src}
+                alt="modal content"
+                className="max-w-full max-h-[90vh] object-contain rounded"
+              />
+            ) : (
+              <video
+                src={mediaFiles[selectedIndex].src}
+                controls
+                className="max-w-full max-h-[90vh] rounded"
+              />
+            )}
+          </div>
+
+          <button
+            onClick={nextMedia}
+            className="absolute right-5 text-white hover:scale-110"
+          >
+            <ChevronRight size={40} />
+          </button>
+        </div>
+      )}
     </>
   );
 }

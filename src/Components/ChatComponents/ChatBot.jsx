@@ -80,7 +80,7 @@ const ChatBot = () => {
 
     return (
       responses[userOption] ||
-      "Thank you for your message. How else can I help?"
+      "Thank you for your message. You can reach us out at momijiinfo@gmail.com or give us a call at +981-*******"
     );
   };
 
@@ -140,6 +140,12 @@ const ChatBot = () => {
         "Social Media",
         "Back to Main Menu",
       ],
+      // Counseling: [
+      //   "Academic Counseling",
+      //   "Career Counseling",
+      //   "Personalized Sessions",
+      //   "Back to Our Services",
+      // ],
       "Back to Main Menu": mainMenu,
     };
 
@@ -194,33 +200,51 @@ const ChatBot = () => {
             </div>
           </div>
 
-          {/* Messages */}
+          {/* Messages + Inline Options */}
           <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-gradient-to-b from-gray-50 to-gray-100">
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex ${
-                  message.sender === "user" ? "justify-end" : "justify-start"
-                }`}
-              >
+            {messages.map((message, index) => (
+              <div key={message.id}>
                 <div
-                  className={`max-w-sm px-4 py-3 rounded-2xl text-sm shadow-md transition-all duration-200 hover:shadow-lg ${
-                    message.sender === "user"
-                      ? "bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-white rounded-br-md transform hover:scale-[1.02]"
-                      : "bg-white text-gray-800 border border-gray-200 rounded-bl-md transform hover:scale-[1.02]"
+                  className={`flex ${
+                    message.sender === "user" ? "justify-end" : "justify-start"
                   }`}
                 >
-                  <p className="mb-2 leading-relaxed">{message.text}</p>
-                  <p
-                    className={`text-xs ${
+                  <div
+                    className={`max-w-sm px-4 py-3 rounded-2xl text-sm shadow-md transition-all duration-200 hover:shadow-lg ${
                       message.sender === "user"
-                        ? "text-blue-100"
-                        : "text-gray-500"
+                        ? "bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-white rounded-br-md transform hover:scale-[1.02]"
+                        : "bg-white text-gray-800 border border-gray-200 rounded-bl-md transform hover:scale-[1.02]"
                     }`}
                   >
-                    {formatTime(message.timestamp)}
-                  </p>
+                    <p className="mb-2 leading-relaxed">{message.text}</p>
+                    <p
+                      className={`text-xs ${
+                        message.sender === "user"
+                          ? "text-blue-100"
+                          : "text-gray-500"
+                      }`}
+                    >
+                      {formatTime(message.timestamp)}
+                    </p>
+                  </div>
                 </div>
+
+                {/* Render options right after the last bot message */}
+                {index === messages.length - 1 &&
+                  message.sender === "bot" &&
+                  currentOptions.length > 0 && (
+                    <div className="mt-4 space-y-2">
+                      {currentOptions.map((option, i) => (
+                        <button
+                          key={i}
+                          onClick={() => handleOptionSelect(option)}
+                          className="w-full text-left px-4 py-3 text-sm bg-white hover:bg-gradient-to-r hover:from-amber-50 hover:to-amber-100 hover:text-slate-700 rounded-xl transition-all duration-300 border border-gray-200 hover:border-amber-300 hover:shadow-md transform font-medium"
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                  )}
               </div>
             ))}
 
@@ -246,32 +270,8 @@ const ChatBot = () => {
                 </div>
               </div>
             )}
-            <div ref={messagesEndRef} />
-          </div>
 
-          {/* Options */}
-          <div className="p-6 border-t border-gray-200 bg-gradient-to-r from-white to-gray-50 rounded-b-xl">
-            <div className="text-center mb-4">
-              <p className="text-sm font-medium text-gray-700 mb-1">
-                Choose your option
-              </p>
-              <p className="text-xs text-gray-500">
-                Select from the options below to continue
-              </p>
-            </div>
-            <div className="space-y-3 max-h-40 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
-              {currentOptions.map((option, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleOptionSelect(option)}
-                  className="w-full text-left px-4 py-3 text-sm bg-white hover:bg-gradient-to-r hover:from-amber-50 hover:to-amber-100 hover:text-slate-700 rounded-xl transition-all duration-300 border border-gray-200 hover:border-amber-300 hover:shadow-md transform font-medium"
-                >
-                  <div className="flex items-center justify-between">
-                    <span>{option}</span>
-                  </div>
-                </button>
-              ))}
-            </div>
+            <div ref={messagesEndRef} />
           </div>
         </div>
       )}
