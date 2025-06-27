@@ -197,7 +197,7 @@ export default function carousel() {
                       </div>
 
                       {/* Content Section */}
-                      <div className="w-2/3 p-6 flex flex-col h-full">
+                      <div className="w-2/3 p-3 flex flex-col h-full">
                         <div className="flex-shrink-0 space-y-3 mb-4">
                           <h3 className="text-2xl font-bold text-gray-900 leading-tight">
                             {university.name}
@@ -264,7 +264,7 @@ export default function carousel() {
       </div>
 
       {/* Styles */}
-      <style jsx>{`
+      <style>{`
         .scrollbar-thin::-webkit-scrollbar {
           width: 6px;
         }

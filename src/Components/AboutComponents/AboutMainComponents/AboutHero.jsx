@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { ChevronDown, Play, Star, Users, Coffee, Award } from "lucide-react";
+import {
+  ChevronDown,
+  Play,
+  Star,
+  Users,
+  Coffee,
+  Award,
+  GraduationCap,
+} from "lucide-react";
 import heroImg from "../../../assets/Images/img2.jpeg";
+import { MessageCircle, X, Minimize2 } from "lucide-react";
 
 const heroImage = heroImg;
 const coffeeImage2 =
@@ -11,6 +20,7 @@ const coffeeImage3 =
 export default function AboutHero() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   const images = [heroImage, coffeeImage2, coffeeImage3];
 
@@ -23,7 +33,7 @@ export default function AboutHero() {
   }, []);
 
   const stats = [
-    { icon: Users, value: "10K+", label: "Happy Students" },
+    { icon: GraduationCap, value: "10K+", label: "Happy Students" },
     { icon: Users, value: "10+", label: "Expert Instructors" },
     { icon: Award, value: "5+", label: "Years Experience" },
   ];
@@ -53,16 +63,14 @@ export default function AboutHero() {
             >
               <div className="space-y-6">
                 <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-orange-400/30">
-                  <span className="text-orange-300 text-sm font-medium">
+                  <span className="text-white text-sm font-medium">
                     Study With Us
                   </span>
                 </div>
 
                 <h1 className="text-2xl md:text-3xl lg:text-5xl font-black  text-white">
                   Study, Learn & succeed with{" "}
-                  <span className="blck text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 leading-tight">
-                    Momiji{" "}
-                  </span>
+                  <span className="text-[#F78C1F] leading-tight">Momiji </span>
                 </h1>
 
                 <p className="text-lg text-gray-300 leading-relaxed max-w-lg">
@@ -73,12 +81,13 @@ export default function AboutHero() {
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <Play className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
-                  Watch Demo
-                </button>
-              </div>
+              <button
+                onClick={() => setShowModal(true)}
+                className="group flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                <Play className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
+                Watch Demo
+              </button>
 
               {/* Stats */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
@@ -135,6 +144,36 @@ export default function AboutHero() {
           </div>
         </div>
       </div>
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-[50%] z-50 flex items-center justify-center px-4">
+          <div className="relative max-w-3xl w-full bg-white rounded-xl shadow-2xl overflow-hidden">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-3 right-3 text-gray-800 hover:text-red-600"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Image */}
+            <img
+              src={heroImage}
+              alt="Demo"
+              className="w-full h-[400px] object-cover rounded-xl"
+            />
+
+            {/* <div className="p-4 text-center">
+              <h2 className="text-xl font-bold text-slate-800 mb-2">
+                Demo Preview
+              </h2>
+              <p className="text-gray-600">
+                Here's a glimpse of what your learning journey looks like with
+                Momiji.
+              </p>
+            </div> */}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

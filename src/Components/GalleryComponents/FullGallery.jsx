@@ -83,12 +83,12 @@ export default function FullGallery() {
             variants={staggerContainer}
             initial="hidden"
             animate="show"
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 relative"
           >
             {column.map((file) => (
               <div
                 key={file.index}
-                className="cursor-pointer"
+                className="cursor-pointer "
                 onClick={() => openModal(file.index)}
               >
                 <LazyMotionItem type={file.type} src={file.src} />
@@ -136,7 +136,7 @@ export default function FullGallery() {
 
       {/* MODAL SECTION */}
       {isModalOpen && selectedIndex !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-100 p-4">
           <button
             onClick={closeModal}
             className="absolute top-5 right-5 text-white hover:text-red-400"

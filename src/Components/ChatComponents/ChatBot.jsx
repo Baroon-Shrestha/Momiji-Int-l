@@ -1,6 +1,177 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Minimize2 } from "lucide-react";
 
+// Flat structured options with parent and response
+const allOptions = [
+  // Main Menu
+  {
+    text: "Our Services",
+    parent: null,
+    response: "We offer personalized guidance for studying in Japan.",
+  },
+  {
+    text: "Language Training",
+    parent: null,
+    response: "Join our Japanese language classes tailored to JLPT levels.",
+  },
+  {
+    text: "Scholarship Opportunities",
+    parent: null,
+    response:
+      "We support students in applying for MEXT and private scholarships.",
+  },
+  {
+    text: "Visa Guidance",
+    parent: null,
+    response: "We help you through every step of the visa application process.",
+  },
+  {
+    text: "Book an Appointment",
+    parent: null,
+    response: "Choose how you'd like to connect with us for more information.",
+  },
+  {
+    text: "Contact Information",
+    parent: null,
+    response: "Phone: +977-1-XXXXXXX | Email: info@momiji.edu.np",
+  },
+
+  // Our Services -> Sub-options
+  {
+    text: "Counseling",
+    parent: "Our Services",
+    response: "We offer career guidance to help you choose the right path.",
+  },
+  {
+    text: "Application Help",
+    parent: "Our Services",
+    response: "We assist with documentation, SOPs, and college applications.",
+  },
+  {
+    text: "Pre-Departure Support",
+    parent: "Our Services",
+    response: "We help you prepare for your journey and stay in Japan.",
+  },
+  {
+    text: "Part-Time Job Assistance",
+    parent: "Our Services",
+    response: "We guide you on finding legal part-time work in Japan.",
+  },
+  { text: "Back to Main Menu", parent: "Our Services" },
+
+  // Counseling -> Sub-options
+  {
+    text: "Career Assessment",
+    parent: "Counseling",
+    response:
+      "We evaluate your strengths and interests to suggest career paths.",
+  },
+  {
+    text: "University Matching",
+    parent: "Counseling",
+    response: "We suggest universities based on your profile and preferences.",
+  },
+  { text: "Back to Our Services", parent: "Counseling" },
+
+  // Language Training -> Sub-options
+  {
+    text: "JLPT N5/N4",
+    parent: "Language Training",
+    response:
+      "Beginner Japanese courses focused on daily conversation and grammar.",
+  },
+  {
+    text: "JLPT N3/N2",
+    parent: "Language Training",
+    response:
+      "Intermediate courses with kanji, reading comprehension, and writing.",
+  },
+  {
+    text: "Class Timings",
+    parent: "Language Training",
+    response: "Morning: 7–9 AM | Evening: 5–7 PM",
+  },
+  { text: "Back to Main Menu", parent: "Language Training" },
+
+  // Scholarship Opportunities -> Sub-options
+  {
+    text: "MEXT Scholarship",
+    parent: "Scholarship Opportunities",
+    response: "A prestigious scholarship by the Japanese Government.",
+  },
+  {
+    text: "JASSO Scholarship",
+    parent: "Scholarship Opportunities",
+    response: "Available to international students studying in Japan.",
+  },
+  {
+    text: "Private Scholarships",
+    parent: "Scholarship Opportunities",
+    response: "We help you find and apply to private fundings.",
+  },
+  { text: "Back to Main Menu", parent: "Scholarship Opportunities" },
+
+  // Visa Guidance -> Sub-options
+  {
+    text: "Student Visa Process",
+    parent: "Visa Guidance",
+    response: "Step-by-step guide to apply for a Japanese student visa.",
+  },
+  {
+    text: "Required Documents",
+    parent: "Visa Guidance",
+    response:
+      "You’ll need: admission letter, financial proof, passport copies.",
+  },
+  {
+    text: "Interview Tips",
+    parent: "Visa Guidance",
+    response: "We train you for your embassy or immigration interview.",
+  },
+  { text: "Back to Main Menu", parent: "Visa Guidance" },
+
+  // Book an Appointment -> Sub-options
+  {
+    text: "Book via Website",
+    parent: "Book an Appointment",
+    response: "Visit www.momiji.edu.np/appointments to schedule a session.",
+  },
+  {
+    text: "Request a Callback",
+    parent: "Book an Appointment",
+    response: "Fill out the callback form on our contact page.",
+  },
+  {
+    text: "Visit Office",
+    parent: "Book an Appointment",
+    response: "We’re open Sunday–Friday, 9AM to 5PM at Samakhusi-10, KTM.",
+  },
+  { text: "Back to Main Menu", parent: "Book an Appointment" },
+
+  // Contact Information -> Sub-options
+  {
+    text: "Phone",
+    parent: "Contact Information",
+    response: "Call us at +977-1-XXXXXXX",
+  },
+  {
+    text: "Email",
+    parent: "Contact Information",
+    response: "Reach out to info@momiji.edu.np",
+  },
+  {
+    text: "Office Location",
+    parent: "Contact Information",
+    response: "We are located at Samakhusi-10, Kathmandu, Nepal.",
+  },
+  {
+    text: "Social Media",
+    parent: "Contact Information",
+    response: "Follow us on Facebook, Instagram, and TikTok @MomijiNepal",
+  },
+  { text: "Back to Main Menu", parent: "Contact Information" },
+];
+
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -11,145 +182,91 @@ const ChatBot = () => {
       timestamp: new Date(),
     },
   ]);
+  const [currentOptions, setCurrentOptions] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
-  const [currentOptions, setCurrentOptions] = useState([
-    "Our Services",
-    "How to Apply for Japan",
-    "Language Training",
-    "Scholarship Opportunities",
-    "Visa Guidance",
-    "Book an Appointment",
-    "Contact Information",
-  ]);
-
   const messagesEndRef = useRef(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  useEffect(() => {
+    setCurrentOptions(
+      allOptions.filter((o) => o.parent === null).map((o) => o.text)
+    );
+  }, []);
 
   useEffect(() => {
-    scrollToBottom();
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  const getNextOptions = (selectedOption) => {
+    return allOptions
+      .filter((opt) => opt.parent === selectedOption)
+      .map((o) => o.text);
+  };
+
+  const getBotResponse = (selectedOption) => {
+    return (
+      allOptions.find((o) => o.text === selectedOption)?.response ||
+      "Please choose from the available options."
+    );
+  };
+
   const handleOptionSelect = (option) => {
-    const newMessage = {
+    const userMessage = {
       id: messages.length + 1,
       text: option,
       sender: "user",
       timestamp: new Date(),
     };
 
-    setMessages((prev) => [...prev, newMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setIsTyping(true);
 
     setTimeout(() => {
-      const botResponse = {
+      const botReply = {
         id: messages.length + 2,
         text: getBotResponse(option),
         sender: "bot",
         timestamp: new Date(),
       };
-      setMessages((prev) => [...prev, botResponse]);
+
+      // First: Handle 'Back to Main Menu'
+      if (option === "Back to Main Menu") {
+        setMessages((prev) => [...prev, botReply]);
+
+        const backMessage = {
+          id: messages.length + 3,
+          text: "You're back at the main menu. Let us know how we can assist you further.",
+          sender: "bot",
+          timestamp: new Date(),
+        };
+
+        setMessages((prev) => [...prev, backMessage]);
+        setCurrentOptions(
+          allOptions.filter((o) => o.parent === null).map((o) => o.text)
+        );
+        setIsTyping(false);
+        return;
+      }
+
+      const next = getNextOptions(option);
+
+      setMessages((prev) => [...prev, botReply]);
       setIsTyping(false);
 
-      const nextOptions = getNextOptions(option);
-      setCurrentOptions(nextOptions);
-    }, 1500);
-  };
+      // If the current option has no children (leaf node)
+      if (next.length === 0) {
+        const followUpMessage = {
+          id: messages.length + 3,
+          text: "Reach us at info@momiji.edu.np or call us at 981-*******.",
+          sender: "bot",
+          timestamp: new Date(),
+        };
 
-  const getBotResponse = (userOption) => {
-    const responses = {
-      "Our Services":
-        "We provide career counseling, university applications, language training, and visa processing for Japan.",
-      "How to Apply for Japan":
-        "We’ll guide you through application timelines, documentation, and interview preparation.",
-      "Language Training":
-        "We offer JLPT-focused language classes both online and in person.",
-      "Scholarship Opportunities":
-        "You can apply for MEXT and other private scholarships with our support.",
-      "Visa Guidance":
-        "We assist in preparing student visa documentation and guide you through the submission process.",
-      "Book an Appointment":
-        "You can book through our website or request a callback to schedule a meeting.",
-      "Contact Information":
-        "Phone: +977-1-XXXXXXX | Email: info@momiji.edu.np | Kathmandu, Nepal",
-      "Back to Main Menu":
-        "You're back at the main menu. Please choose a topic to get started.",
-    };
-
-    return (
-      responses[userOption] ||
-      "Thank you for your message. You can reach us out at momijiinfo@gmail.com or give us a call at +981-*******"
-    );
-  };
-
-  const getNextOptions = (selectedOption) => {
-    const mainMenu = [
-      "Our Services",
-      "How to Apply for Japan",
-      "Language Training",
-      "Scholarship Opportunities",
-      "Visa Guidance",
-      "Book an Appointment",
-      "Contact Information",
-    ];
-
-    const optionMap = {
-      "Our Services": [
-        "Counseling",
-        "University/College Application",
-        "Pre-Departure Support",
-        "Part-Time Job Assistance",
-        "Back to Main Menu",
-      ],
-      "How to Apply for Japan": [
-        "Application Timeline",
-        "Required Documents",
-        "Interview Preparation",
-        "Back to Main Menu",
-      ],
-      "Language Training": [
-        "JLPT Courses",
-        "Class Schedule",
-        "Online vs In-Person",
-        "Back to Main Menu",
-      ],
-      "Scholarship Opportunities": [
-        "MEXT Scholarship",
-        "Private Scholarships",
-        "Eligibility Criteria",
-        "Back to Main Menu",
-      ],
-      "Visa Guidance": [
-        "Student Visa Process",
-        "Visa Document Checklist",
-        "Common Rejection Reasons",
-        "Back to Main Menu",
-      ],
-      "Book an Appointment": [
-        "Book via Website",
-        "Request a Callback",
-        "Visit Office",
-        "Back to Main Menu",
-      ],
-      "Contact Information": [
-        "Email",
-        "Phone",
-        "Office Location",
-        "Social Media",
-        "Back to Main Menu",
-      ],
-      // Counseling: [
-      //   "Academic Counseling",
-      //   "Career Counseling",
-      //   "Personalized Sessions",
-      //   "Back to Our Services",
-      // ],
-      "Back to Main Menu": mainMenu,
-    };
-
-    return optionMap[selectedOption] || mainMenu;
+        setMessages((prev) => [...prev, followUpMessage]);
+        setCurrentOptions(["Back to Main Menu"]);
+      } else {
+        setCurrentOptions(next);
+      }
+    }, 1000);
   };
 
   const formatTime = (date) => {
@@ -162,7 +279,6 @@ const ChatBot = () => {
         <button
           onClick={() => setIsOpen(true)}
           className="bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
-          aria-label="Open chat"
         >
           <MessageCircle size={24} />
         </button>
@@ -186,21 +302,19 @@ const ChatBot = () => {
               <button
                 onClick={() => setIsOpen(false)}
                 className="hover:bg-blue-800 hover:bg-opacity-50 p-2 rounded-lg transition-all duration-200 hover:scale-105"
-                aria-label="Minimize chat"
               >
                 <Minimize2 size={16} />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
                 className="hover:bg-red-500 hover:bg-opacity-70 p-2 rounded-lg transition-all duration-200 hover:scale-105"
-                aria-label="Close chat"
               >
                 <X size={16} />
               </button>
             </div>
           </div>
 
-          {/* Messages + Inline Options */}
+          {/* Body */}
           <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-gradient-to-b from-gray-50 to-gray-100">
             {messages.map((message, index) => (
               <div key={message.id}>
@@ -212,11 +326,11 @@ const ChatBot = () => {
                   <div
                     className={`max-w-sm px-4 py-3 rounded-2xl text-sm shadow-md transition-all duration-200 hover:shadow-lg ${
                       message.sender === "user"
-                        ? "bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-white rounded-br-md transform hover:scale-[1.02]"
-                        : "bg-white text-gray-800 border border-gray-200 rounded-bl-md transform hover:scale-[1.02]"
+                        ? "bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-white rounded-br-md"
+                        : "bg-white text-gray-800 border border-gray-200 rounded-bl-md"
                     }`}
                   >
-                    <p className="mb-2 leading-relaxed">{message.text}</p>
+                    <p className="mb-2">{message.text}</p>
                     <p
                       className={`text-xs ${
                         message.sender === "user"
@@ -229,7 +343,6 @@ const ChatBot = () => {
                   </div>
                 </div>
 
-                {/* Render options right after the last bot message */}
                 {index === messages.length - 1 &&
                   message.sender === "bot" &&
                   currentOptions.length > 0 && (
@@ -254,14 +367,8 @@ const ChatBot = () => {
                   <div className="flex space-x-2 items-center">
                     <div className="flex space-x-1">
                       <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full animate-bounce"></div>
-                      <div
-                        className="w-2 h-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full animate-bounce"
-                        style={{ animationDelay: "0.1s" }}
-                      ></div>
-                      <div
-                        className="w-2 h-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full animate-bounce"
-                        style={{ animationDelay: "0.2s" }}
-                      ></div>
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full animate-bounce delay-100"></div>
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full animate-bounce delay-200"></div>
                     </div>
                     <span className="text-xs text-gray-500 ml-2">
                       typing...

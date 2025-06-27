@@ -1,5 +1,6 @@
 import React from "react";
 import { Facebook, MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const handleCallClick = () => {
@@ -44,15 +45,21 @@ export default function Footer() {
               <div className="flex items-center justify-between gap-8">
                 <div className="list-none">
                   <p className="font-semibold mb-2 text-white">Quick links</p>
-                  <li className="mb-1 cursor-pointer hover:text-amber-400 transition-colors text-gray-300">
-                    About US
-                  </li>
-                  <li className="mb-1 cursor-pointer hover:text-amber-400 transition-colors text-gray-300">
-                    Gallery
-                  </li>
-                  <li className="mb-1 cursor-pointer hover:text-amber-400 transition-colors text-gray-300">
-                    Services
-                  </li>
+                  <Link to="/about">
+                    <li className="mb-1 cursor-pointer hover:text-amber-400 transition-colors text-gray-300">
+                      About US
+                    </li>
+                  </Link>
+                  <Link to="/gallery">
+                    <li className="mb-1 cursor-pointer hover:text-amber-400 transition-colors text-gray-300">
+                      Gallery
+                    </li>
+                  </Link>
+                  <Link to="/services">
+                    <li className="mb-1 cursor-pointer hover:text-amber-400 transition-colors text-gray-300">
+                      Services
+                    </li>
+                  </Link>
                 </div>
                 <div className="list-none">
                   <p className="font-semibold mb-2 text-white">Contact Us</p>

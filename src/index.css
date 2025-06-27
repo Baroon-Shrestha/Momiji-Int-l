@@ -17,5 +17,4 @@
 /* Global Reset - IMPORTANT: This overrides all existing fonts */
 * {
   font-family: var(--font-primary) !important;
-  font-weight: 600;
 }

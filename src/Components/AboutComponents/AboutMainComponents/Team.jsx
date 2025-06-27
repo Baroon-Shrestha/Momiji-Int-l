@@ -217,19 +217,19 @@ export default function Team() {
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/10"></div>
 
                         {/* Role Badge */}
-                        <div className="absolute top-4 left-4">
-                          <span className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg backdrop-blur-sm">
-                            {member.role}
-                          </span>
-                        </div>
                       </div>
 
                       {/* Content Section */}
-                      <div className="w-3/5 p-6 flex flex-col h-full">
+                      <div className="w-3/5 p-3 flex flex-col h-full">
                         <div className="flex-shrink-0 space-y-3 mb-4">
                           <h3 className="text-2xl font-bold text-gray-900 leading-tight">
                             {member.name}
                           </h3>
+                          <div className="">
+                            <span className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg backdrop-blur-sm">
+                              {member.role}
+                            </span>
+                          </div>
                           <div className="w-12 h-0.5 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full"></div>
                         </div>
 
@@ -257,7 +257,7 @@ export default function Team() {
       </div>
 
       {/* Styles */}
-      <style jsx>{`
+      <style>{`
         .scrollbar-thin::-webkit-scrollbar {
           width: 6px;
         }

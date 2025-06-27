@@ -15,21 +15,35 @@ export default function Introduction() {
           </p>
         </div>
 
-        <p className="text-base sm:text-lg md:text-xl font-extralight text-center text-gray-700 max-w-5xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-          cupiditate suscipit officia id in veniam laudantium fuga ipsa
-          voluptates, ratione minima aperiam ipsum asperiores laboriosam
-          praesentium debitis totam dolor animi aut veritatis repudiandae ullam?
-          Quas rerum iusto magni? Nostrum velit dolores eius obcaecati enim quod
-          reprehenderit beatae cupiditate molestiae magni tempore iusto iure,
-          consequuntur aliquid veritatis? Voluptatibus blanditiis nobis,
-          exercitationem atque praesentium accusamus tempora, perferendis
-          officiis omnis sunt ipsa aliquam dolorum illum veritatis ipsum optio
-          porro magni cupiditate, quos vel laudantium eos eveniet amet!
-          Excepturi, repellendus! Eligendi facilis architecto, amet earum
-          perferendis illum, molestiae ab aperiam ut reprehenderit similique
-          dolorem qui dolores obcaecati cumque animi aliquid et quod dignissimos
-          nobis optio velit porro. Inventore, minus fugit.
+        <p className="text-base sm:text-lg md:text-xl font-bolder text-center text-gray-700 max-w-7xl">
+          Momiji International Academy warmly welcomes you to a place where
+          dreams take flight and futures are shaped. As an institution committed
+          to guiding students on their journey to Japan, we provide expert
+          support in education, language training, cultural adaptation, and
+          career development. <br />
+          <br />
+          <b>Our mission</b> is simple — to open doors for Nepali students and
+          job seekers who aspire to build a better future in Japan. Whether
+          you're interested in nursing care, food service, civil engineering, or
+          academic studies, we are here to walk beside you every step of the
+          way. At Momiji, we believe that education is more than just books — it
+          is preparation for life. That’s why we offer both online and offline
+          support, real-time counseling, job interview preparation, and language
+          courses designed to help you succeed in Japan's competitive and
+          dynamic environment. We understand that moving abroad is a big step.
+          That’s why we are not just a consultancy — we are a family. A family
+          that listens, guides, and stands by you from the first inquiry to your
+          successful settlement in Japan. Thousands of students have already
+          taken the step forward with Momiji.
+          <br />
+          <br />
+          <span className="text-[#F78C1F] font-bold">
+            Now, it’s your turn. Join us. Let’s build your future together.{" "}
+          </span>
+          <br />{" "}
+          <span className="font-extralight text-center">
+            "Your journey to Japan begins at Momiji."
+          </span>
         </p>
 
         <img
