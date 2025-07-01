@@ -14,7 +14,7 @@ export default function ServiceMain() {
 
       {/* <ServicesContent2 /> */}
       <ServicesContent />
-      <div className="text-white bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] mx-6 rounded-4xl">
+      <div className="text-white bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] mx-2 md:mx-6 rounded-4xl">
         <Motto />
       </div>
       <Why />
