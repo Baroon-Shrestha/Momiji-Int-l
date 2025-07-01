@@ -5,8 +5,10 @@ import img3 from "../../assets/Images/img3.jpeg";
 import img4 from "../../assets/Images/img4.jpeg";
 import img5 from "../../assets/Images/img5.jpeg";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function SmallGallery() {
+  const { t } = useTranslation();
   const imageGrid = [
     [img1, img2, img5],
     [img3, img4, img5],
@@ -19,9 +21,11 @@ export default function SmallGallery() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-900">Gallery</h1>
+          <h1 className="text-4xl font-extrabold text-gray-900">
+            {t("home.gallery.heading")}
+          </h1>
           <p className="text-gray-600 font-extralight text-xl max-w-2xl mx-auto capitalize">
-            Some of the glimpse of our institute
+            {t("home.gallery.subheading")}
           </p>
         </div>
 
@@ -47,7 +51,7 @@ export default function SmallGallery() {
         <Link to="/gallery">
           <div className="text-center mt-12">
             <button className="bg-gray-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
-              View More
+              {t("home.gallery.button")}
             </button>
           </div>
         </Link>

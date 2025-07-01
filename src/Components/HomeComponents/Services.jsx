@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   FaGraduationCap,
   FaBook,
@@ -13,73 +14,57 @@ import { Link } from "react-router-dom";
 const ServicesBanner = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [visibleCards, setVisibleCards] = useState([]);
+  const { t } = useTranslation();
 
-  const services = [
+  const serviceIcons = [
     {
       icon: <FaGraduationCap />,
-      title: "Academic Excellence Programs",
-      description:
-        "High-level guidance and performance-driven learning to unlock your full potential.",
       color: "from-indigo-500 to-purple-600",
       accent: "#6366f1",
     },
     {
       icon: <FaBook />,
-      title: "Comprehensive Learning Resources",
-      description:
-        "Access to vast digital and physical learning tools for immersive education.",
       color: "from-emerald-500 to-teal-600",
       accent: "#10b981",
     },
     {
       icon: <FaChalkboardTeacher />,
-      title: "Expert Teaching Methodology",
-      description:
-        "Trained faculty delivering modern pedagogy with personalized attention.",
       color: "from-amber-500 to-orange-600",
       accent: "#f59e0b",
     },
     {
       icon: <FaLaptopCode />,
-      title: "Digital Learning Platform",
-      description:
-        "24/7 access to interactive course materials and cutting-edge technology.",
       color: "from-violet-500 to-purple-600",
       accent: "#8b5cf6",
     },
     {
       icon: <FaFlask />,
-      title: "Hands-on Laboratory Experience",
-      description:
-        "Practical knowledge through real-world experimentation and research.",
       color: "from-red-500 to-pink-600",
       accent: "#ef4444",
     },
     {
       icon: <MdSchool />,
-      title: "Certified Learning Pathways",
-      description:
-        "Structured courses leading to globally recognized certifications.",
       color: "from-cyan-500 to-blue-600",
       accent: "#06b6d4",
     },
     {
       icon: <FaUsers />,
-      title: "Collaborative Study Groups",
-      description:
-        "Learn with your peers in guided sessions that foster teamwork.",
       color: "from-lime-500 to-green-600",
       accent: "#84cc16",
     },
     {
       icon: <MdQuiz />,
-      title: "Interactive Assessment Tools",
-      description:
-        "Track your progress with real-time feedback and detailed analytics.",
       color: "from-orange-500 to-red-600",
       accent: "#f97316",
     },
   ];
+
+  const serviceContent = t("home.services.items", { returnObjects: true });
+
+  const services = serviceContent.map((item, index) => ({
+    ...item,
+    ...serviceIcons[index],
+  }));
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -114,12 +99,11 @@ const ServicesBanner = () => {
         {/* Header Section */}
         <div className="text-center mb-20">
           <h2 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-yellow-500 to-orange-500  bg-clip-text text-transparent mb-6 leading-tight">
-            Our Main Services
+            {t("home.services.heading")}
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover our comprehensive suite of educational services designed to
-            empower your learning journey and unlock your full potential.
+            {t("home.services.subheading")}
           </p>
 
           <div className="flex justify-center mt-8">
@@ -208,12 +192,12 @@ const ServicesBanner = () => {
           <div className="inline-flex flex-col sm:flex-row items-center gap-4">
             <Link to="/services">
               <button className="px-8 py-4 bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B]  text-white font-semibold rounded-full hover:from-amber-700 hover:to-amber-500 transform hover:scale-105 transition-all duration-200 ease-out shadow-lg hover:shadow-xl">
-                Explore Other Services
+                {t("home.services.buttons.explore")}
               </button>
             </Link>
             <Link to="/contact">
               <button className="px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-700 font-semibold rounded-full border border-gray-200 hover:bg-white hover:shadow-lg transform hover:scale-105 transition-all duration-200 ease-out">
-                Contact Us
+                {t("home.services.buttons.contact")}
               </button>
             </Link>
           </div>

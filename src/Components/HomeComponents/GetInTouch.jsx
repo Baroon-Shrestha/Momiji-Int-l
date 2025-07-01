@@ -7,8 +7,10 @@ import {
   MessageCircle,
   Navigation,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function GetInTouch() {
+  const { t } = useTranslation();
   const handleCallClick = () => {
     window.open("tel:+977-98XXXXXXXX", "_self");
   };
@@ -28,13 +30,13 @@ export default function GetInTouch() {
     <>
       <div className="container mx-auto px-4 py-8">
         <div className="capitalize text-2xl sm:text-3xl md:text-4xl font-extrabold mb-12 text-center">
-          We’re Here to Welcome You
+          {t("home.visit.heading")}
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 min-h-96">
           <div className="bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-[#FFFAE9] rounded-2xl p-8 shadow-lg border border-amber-200">
             <div className="text-3xl uppercase font-extrabold mb-8 flex items-center gap-3">
               <MessageCircle className="" size={32} />
-              visit Us
+              {t("home.visit.heading2")}
             </div>
 
             <div className="space-y-6">

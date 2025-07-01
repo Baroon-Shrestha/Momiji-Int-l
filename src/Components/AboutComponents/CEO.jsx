@@ -1,7 +1,9 @@
 import React from "react";
 import ceoImg from "../../assets/CEO.jpg";
+import { useTranslation } from "react-i18next";
 
 export default function CEO() {
+  const { t } = useTranslation();
   return (
     <div className="">
       <section className="relative w-full bg-gradient-to-r from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white overflow-hidden">
@@ -18,11 +20,10 @@ export default function CEO() {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 py-20 flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
-            Message from the CEO
+            {t("ceo.heading")}
           </h1>
           <p className="text-lg md:text-xl max-w-2xl font-extralight">
-            A few words from our founder, dedicated to helping students unlock
-            their potential and discover new possibilities in Japan.
+            {t("ceo.subheading")}
           </p>
         </div>
       </section>

@@ -17,6 +17,7 @@ import {
   Headphones,
 } from "lucide-react";
 import logo from "../assets/logo2.png";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,6 +25,8 @@ export default function Navbar() {
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const servicesDropdownRef = useRef(null);
   const aboutDropdownRef = useRef(null);
+
+  const { t } = useTranslation();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -49,7 +52,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 1024) {
+        // Changed from 768 to 1024 for tablet support
         setMenuOpen(false);
       }
     };
@@ -70,11 +74,12 @@ export default function Navbar() {
             />
           </NavLink>
 
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Now shows only on lg screens and up */}
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6">
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 relative group ${
+                `flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-all duration-300 relative group whitespace-nowrap ${
                   isActive
                     ? "text-orange-700 bg-orange-50 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 after:w-8 after:h-0.5 after:rounded-full after:transition-all after:duration-300 after:bg-orange-500"
                     : "text-orange-500 hover:text-orange-700 hover:bg-orange-50"
@@ -88,7 +93,7 @@ export default function Navbar() {
                 size={18}
                 className="transition-transform duration-300 group-hover:scale-110"
               />
-              Home
+              {t("nav.home")}
             </NavLink>
 
             {/* Desktop About with Dropdown */}
@@ -97,7 +102,7 @@ export default function Navbar() {
                 to="/about"
                 onMouseEnter={() => setAboutDropdownOpen(true)}
                 className={({ isActive }) =>
-                  `min-w-[160px] flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 relative group ${
+                  `flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-all duration-300 relative group whitespace-nowrap ${
                     isActive
                       ? "text-orange-700 bg-orange-50 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 after:w-8 after:h-0.5 after:rounded-full after:transition-all after:duration-300 after:bg-orange-500"
                       : "text-orange-500 hover:text-orange-700 hover:bg-orange-50"
@@ -109,7 +114,7 @@ export default function Navbar() {
                   size={18}
                   className="transition-transform duration-300 group-hover:scale-110"
                 />
-                About Us
+                {t("nav.about")}
                 <ChevronDown
                   size={16}
                   className={`transition-transform duration-300 ${
@@ -144,13 +149,13 @@ export default function Navbar() {
                         className="font-semibold text-gray-900 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        Our Vision
+                        {t("nav.visionhead")}
                       </div>
                       <div
                         className="text-sm text-gray-500 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        Purpose & vision
+                        {t("nav.visionsubhead")}
                       </div>
                     </div>
                   </NavLink>
@@ -168,13 +173,13 @@ export default function Navbar() {
                         className="font-semibold text-gray-900 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        Our Team
+                        {t("nav.teamhead")}
                       </div>
                       <div
                         className="text-sm text-gray-500 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        Meet the experts
+                        {t("nav.teamsubhead")}
                       </div>
                     </div>
                   </NavLink>
@@ -192,13 +197,13 @@ export default function Navbar() {
                         className="font-semibold text-gray-900 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        From CEO
+                        {t("nav.ceohead")}
                       </div>
                       <div
                         className="text-sm text-gray-500 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        Words from CEO
+                        {t("nav.ceosubhead")}
                       </div>
                     </div>
                   </NavLink>
@@ -209,7 +214,7 @@ export default function Navbar() {
             <NavLink
               to="/gallery"
               className={({ isActive }) =>
-                `flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 relative group ${
+                `flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-all duration-300 relative group whitespace-nowrap ${
                   isActive
                     ? "text-orange-700 bg-orange-50 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 after:w-8 after:h-0.5 after:rounded-full after:transition-all after:duration-300 after:bg-orange-500"
                     : "text-orange-500 hover:text-orange-700 hover:bg-orange-50"
@@ -221,7 +226,7 @@ export default function Navbar() {
                 size={18}
                 className="transition-transform duration-300 group-hover:scale-110"
               />
-              Gallery
+              {t("nav.gallery")}
             </NavLink>
 
             {/* Desktop Services with Dropdown */}
@@ -230,7 +235,7 @@ export default function Navbar() {
                 to="/services"
                 onMouseEnter={() => setServicesDropdownOpen(true)}
                 className={({ isActive }) =>
-                  `flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 relative group ${
+                  `flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-all duration-300 relative group whitespace-nowrap ${
                     isActive
                       ? "text-orange-700 bg-orange-50 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 after:w-8 after:h-0.5 after:rounded-full after:transition-all after:duration-300 after:bg-orange-500"
                       : "text-orange-500 hover:text-orange-700 hover:bg-orange-50"
@@ -242,7 +247,7 @@ export default function Navbar() {
                   size={18}
                   className="transition-transform duration-300 group-hover:scale-110"
                 />
-                Services
+                {t("nav.service")}
                 <ChevronDown
                   size={16}
                   className={`transition-transform duration-300 ${
@@ -277,13 +282,13 @@ export default function Navbar() {
                         className="font-semibold text-gray-900 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        Consulting
+                        {t("nav.consulthead")}
                       </div>
                       <div
                         className="text-sm text-gray-500 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        Strategic guidance & expertise
+                        {t("nav.consultsubhead")}
                       </div>
                     </div>
                   </NavLink>
@@ -301,13 +306,13 @@ export default function Navbar() {
                         className="font-semibold text-gray-900 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        Scholarship
+                        {t("nav.scholarhead")}
                       </div>
                       <div
                         className="text-sm text-gray-500 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        Scholarship & Financial Aid
+                        {t("nav.scholarsubhead")}
                       </div>
                     </div>
                   </NavLink>
@@ -325,13 +330,13 @@ export default function Navbar() {
                         className="font-semibold text-gray-900 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        FAQ
+                        {t("nav.faqhead")}
                       </div>
                       <div
                         className="text-sm text-gray-500 group-hover:transition-colors duration-200"
                         style={{ color: "#FF8B0F" }}
                       >
-                        Querries and Support from our side
+                        {t("nav.faqsubhead")}
                       </div>
                     </div>
                   </NavLink>
@@ -341,7 +346,7 @@ export default function Navbar() {
 
             <NavLink
               to="/contact"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 border-2 shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700 border-orange-600 hover:border-orange-700"
+              className="flex items-center gap-2 px-4 py-3 rounded-xl font-semibold transition-all duration-300 border-2 shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700 border-orange-600 hover:border-orange-700 whitespace-nowrap"
               style={{
                 backgroundColor: "#FF8B0F",
                 color: "white",
@@ -349,23 +354,23 @@ export default function Navbar() {
               }}
             >
               <Phone size={18} />
-              Contact
+              {t("nav.contact")}
             </NavLink>
           </div>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile/Tablet Hamburger - Now shows on tablet and mobile */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg transition-all duration-300 hover:bg-orange-50"
+            className="lg:hidden p-2 rounded-lg transition-all duration-300 hover:bg-orange-50"
             style={{ color: "#FF8B0F" }}
           >
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile/Tablet Menu - Now shows on tablet and mobile */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
             menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
           }`}
         >
@@ -383,10 +388,10 @@ export default function Navbar() {
               style={{ color: "#FF8B0F" }}
             >
               <Home size={18} />
-              Home
+              {t("nav.home")}
             </NavLink>
 
-            {/* Mobile About */}
+            {/* Mobile/Tablet About */}
             <div>
               <button
                 onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
@@ -395,7 +400,7 @@ export default function Navbar() {
               >
                 <div className="flex items-center gap-3">
                   <Users size={18} />
-                  <span>About Us</span>
+                  <span>{t("nav.about")}</span>
                 </div>
                 <ChevronDown
                   size={16}
@@ -420,7 +425,7 @@ export default function Navbar() {
                     style={{ color: "#FF8B0F" }}
                   >
                     <Users size={16} />
-                    About Us
+                    {t("nav.about")}
                   </NavLink>
                   <NavLink
                     to="/about/vision"
@@ -429,7 +434,7 @@ export default function Navbar() {
                     style={{ color: "#FF8B0F" }}
                   >
                     <Target size={16} />
-                    Our Vision
+                    {t("nav.visionhead")}
                   </NavLink>
                   <NavLink
                     to="/about/team"
@@ -438,7 +443,7 @@ export default function Navbar() {
                     style={{ color: "#FF8B0F" }}
                   >
                     <Award size={16} />
-                    Our Team
+                    {t("nav.teamhead")}
                   </NavLink>
                   <NavLink
                     to="/about/ceo"
@@ -447,13 +452,13 @@ export default function Navbar() {
                     style={{ color: "#FF8B0F" }}
                   >
                     <Heart size={16} />
-                    From CEO
+                    {t("nav.ceohead")}
                   </NavLink>
                 </div>
               </div>
             </div>
 
-            {/* Mobile Services */}
+            {/* Mobile/Tablet Services */}
             <div>
               <button
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
@@ -462,7 +467,7 @@ export default function Navbar() {
               >
                 <div className="flex items-center gap-3">
                   <Briefcase size={18} />
-                  <span>Services</span>
+                  <span>{t("nav.service")}</span>
                 </div>
                 <ChevronDown
                   size={16}
@@ -487,7 +492,7 @@ export default function Navbar() {
                     style={{ color: "#FF8B0F" }}
                   >
                     <Briefcase size={16} />
-                    Services
+                    {t("nav.service")}
                   </NavLink>
                   <NavLink
                     to="/services/consulting"
@@ -496,7 +501,7 @@ export default function Navbar() {
                     style={{ color: "#FF8B0F" }}
                   >
                     <Lightbulb size={16} />
-                    Consulting
+                    {t("nav.consulthead")}
                   </NavLink>
                   <NavLink
                     to="/services/scholarship"
@@ -505,7 +510,7 @@ export default function Navbar() {
                     style={{ color: "#FF8B0F" }}
                   >
                     <Award size={16} />
-                    ScholarShip & Financial Aid
+                    {t("nav.scholarhead")}
                   </NavLink>
                   <NavLink
                     to="/services/faq"
@@ -514,7 +519,7 @@ export default function Navbar() {
                     style={{ color: "#FF8B0F" }}
                   >
                     <Headphones size={16} />
-                    FAQ
+                    {t("nav.faqhead")}
                   </NavLink>
                 </div>
               </div>
@@ -533,7 +538,7 @@ export default function Navbar() {
               style={{ color: "#FF8B0F" }}
             >
               <Camera size={18} />
-              Gallery
+              {t("nav.gallery")}
             </NavLink>
 
             <NavLink
@@ -543,7 +548,7 @@ export default function Navbar() {
               style={{ backgroundColor: "#FF8B0F" }}
             >
               <Phone size={18} />
-              Contact
+              {t("nav.contact")}
             </NavLink>
           </div>
         </div>

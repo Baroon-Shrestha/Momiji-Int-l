@@ -86,7 +86,7 @@ export default function OurVision() {
         </div>
       </section>
 
-      <section className="py-20 relative overflow-hidden bg-gradient-to-r from-[#FFE04F] to-[#FF8B0f] text-white rounded-4xl">
+      <section className="py-20 mx-6 relative overflow-hidden bg-gradient-to-r from-[#FFE04F] to-[#FF8B0f] text-white rounded-4xl">
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">

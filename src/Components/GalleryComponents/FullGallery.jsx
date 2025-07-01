@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import LazyMotionItem from "../HelperComponents/LazyMotionItem";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function FullGallery() {
   const [layoutType] = useState("improved-masonry");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
-
+  const { t } = useTranslation();
   const imageModules = import.meta.glob(
     "../../assets/Images/*.{jpeg,jpg,avif,mp4}",
     { eager: true }
@@ -115,12 +116,10 @@ export default function FullGallery() {
 
           <div className="relative z-10 container mx-auto px-4 py-20 flex flex-col items-center text-center">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
-              Gallery
+              {t("gallery.heading")}
             </h1>
             <p className="text-lg md:text-xl max-w-2xl font-extralight">
-              From classrooms to culture, Momiji is where journeys to Japan
-              begin—with guidance, growth, and glimpses of unforgettable
-              memories.
+              {t("gallery.subheading")}
             </p>
           </div>
         </section>
@@ -129,7 +128,7 @@ export default function FullGallery() {
           {layoutType === "improved-masonry" && renderImprovedMasonry()}
 
           <div className="text-2xl font-extralight capitalize text-center my-8">
-            You have reached the end of our gallery.
+            {t("gallery.footer")}
           </div>
         </div>
       </div>

@@ -1,0 +1,178 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "gallery": "Gallery",
+    "service": "Services",
+    "contact": "Contact",
+    "visionhead": "Our Vision",
+    "visionsubhead": "purpose & vision",
+    "teamhead": "Our Team",
+    "teamsubhead": "Meet the experts",
+    "ceohead": "From CEO",
+    "ceosubhead": "Words from CEO",
+    "consulthead": "Consulting",
+    "consultsubhead": " Strategic guidance & expertise",
+    "scholarhead": "Scholarship",
+    "scholarsubhead": "Scholarship & Financial Aid",
+    "faqhead": "FAQ",
+    "faqsubhead": "Querries and Support from our side"
+  },
+  "notfound": {
+    "heading": "Page Not Found",
+    "subheading": "Oops! The page you're looking for doesn't exist."
+  },
+  "home": {
+    "hero": {
+      "opening": "Welcome to",
+      "title": "Level Up Your Future — Study in Japan",
+      "button": "  Learn More About Us"
+    },
+    "intro": {
+      "heading1": "Welcome to",
+      "heading2": "MOMIJI INTERNATIONAL ACADEMY",
+      "subheading": "Leading students to a bright future in JAPAN.",
+      "paragraph1": "Momiji International Academy warmly welcomes you to a place where dreams take flight and futures are shaped. As an institution committed to guiding students on their journey to Japan, we provide expert support in education, language training, cultural adaptation, and career development.",
+      "paragraph2": "Our mission is simple — to open doors for Nepali students and job seekers who aspire to build a better future in Japan. Whether you're interested in nursing care, food service, civil engineering, or academic studies, we are here to walk beside you every step of the way. At Momiji, we believe that education is more than just books — it is preparation for life. That’s why we offer both online and offline support, real-time counseling, job interview preparation, and language courses designed to help you succeed in Japan's competitive and dynamic environment. We understand that moving abroad is a big step. That’s why we are not just a consultancy — we are a family. A family that listens, guides, and stands by you from the first inquiry to your successful settlement in Japan. Thousands of students have already taken the step forward with Momiji.",
+      "ending1": "Now, it’s your turn. Join us. Let’s build your future together.",
+      "ending2": "Your journey to Japan begins at Momiji."
+    },
+    "services": {
+      "heading": "Our Main Services",
+      "subheading": "Discover our comprehensive suite of educational services designed to empower your learning journey and unlock your full potential.",
+      "buttons": {
+        "explore": "Explore Other Services",
+        "contact": "Contact Us"
+      },
+      "items": [
+        {
+          "title": "Academic Excellence Programs",
+          "description": "High-level guidance and performance-driven learning to unlock your full potential."
+        },
+        {
+          "title": "Comprehensive Learning Resources",
+          "description": "Access to vast digital and physical learning tools for immersive education."
+        },
+        {
+          "title": "Expert Teaching Methodology",
+          "description": "Trained faculty delivering modern pedagogy with personalized attention."
+        },
+        {
+          "title": "Digital Learning Platform",
+          "description": "24/7 access to interactive course materials and cutting-edge technology."
+        },
+        {
+          "title": "Hands-on Experience",
+          "description": "Practical knowledge through real-world experimentation and research."
+        },
+        {
+          "title": "Certified Learning Pathways",
+          "description": "Structured courses leading to globally recognized certifications."
+        },
+        {
+          "title": "Collaborative Study Groups",
+          "description": "Learn with your peers in guided sessions that foster teamwork."
+        },
+        {
+          "title": "Interactive Assessment Tools",
+          "description": "Track your progress with real-time feedback and detailed analytics."
+        }
+      ]
+    },
+    "why": {
+      "heading": "Why Choose Momiji?",
+      "subheading": "Our biggest strength lies in offering accurate, up-to-date information about Japanese institutions, entry requirements, and cultural adaptation. With an experienced and passionate team, we ensure a seamless experience that saves you time and gives you confidence.",
+      "highlights": {
+        "items": [
+          {
+            "title": "High Visa Success Rate",
+            "content": "Personalized Counseling by Industry Professionals",
+            "description": "Our experienced counselors provide tailored advice on university selection, course alignment, and visa procedures to help you achieve your study-abroad goals.",
+            "icon": "🎯"
+          },
+          {
+            "title": "Certified & Experienced Counselors",
+            "content": "From Documentation to Interview Preparation",
+            "description": "We assist with all aspects of the admission process—shortlisting institutions, preparing SOPs and LoRs, completing applications, and preparing for interviews.",
+            "icon": "👨‍🎓"
+          },
+          {
+            "title": "Transparent Workflow System",
+            "content": "No Hidden Charges, Clear Process",
+            "description": "Our experts help identify and apply for relevant scholarships and assistantships, increasing your chances of receiving funding or tuition waivers.",
+            "icon": "💎"
+          },
+          {
+            "title": "Partnership With Japanese Universities",
+            "content": "Accurate, Timely, Hassle-Free Processing",
+            "description": "We provide complete support with visa applications, document checklists, mock interviews, and embassy guidelines—so you can proceed confidently.",
+            "icon": "🏛️"
+          },
+          {
+            "title": "Personalized Counselling Approach",
+            "content": "Tailored Solutions for Every Student",
+            "description": "From accommodation search to orientation on culture, travel, and budgeting, our pre-departure and post-arrival guidance ensures a smooth transition.",
+            "icon": "🤝"
+          },
+          {
+            "title": "Pre & Post Departure Support",
+            "content": "Helping You Settle Abroad with Confidence",
+            "description": "From accommodation search to orientation on culture, travel, and budgeting, our pre-departure and post-arrival guidance ensures a smooth transition.",
+            "icon": "✈️"
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Ready to Start Your Journey?",
+        "subheading": "Join thousands of successful students who chose us for their international education.",
+        "button": "Connect With Us Now"
+      }
+    },
+    "uni": {
+      "heading": "Featured Universities",
+      "subheading": "Explore some of the reputed institutions we partner with. Our network of universities ensures quality education and global recognition."
+    },
+    "gallery": {
+      "heading": "Gallery",
+      "subheading": "Some of the glimpse of our institute",
+      "button": "View More"
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "subtitle": "Discover what our students say about their transformative educational journey",
+      "items": [
+        {
+          "name": "ABC University",
+          "description": "An exceptional institution that transformed my academic journey. The quality of education, research opportunities, and networking possibilities exceeded all my expectations.",
+          "student": "Sarah Johnson",
+          "degree": "Computer Science"
+        },
+        {
+          "name": "DEF University",
+          "description": "The innovation hub of the world! My experience here was nothing short of extraordinary. The entrepreneurial spirit, cutting-edge research facilities, and collaborative environment fostered my growth immensely.",
+          "student": "Michael Chen",
+          "degree": "Engineering"
+        },
+        {
+          "name": "HIJ University",
+          "description": "Where impossible becomes possible. The rigorous academic program challenged me to think differently and approach problems from multiple angles.",
+          "student": "Emily Rodriguez",
+          "degree": "Physics"
+        }
+      ]
+    },
+    "visit": {
+      "heading": "We are Here to Welcome You",
+      "heading2": "visit Us"
+    }
+  },
+  "gallery": {
+    "heading": "Gallery",
+    "subheading": "From classrooms to culture, Momiji is where journeys to Japan begin—with guidance, growth, and glimpses of unforgettable memories.",
+    "footer": "You have reached the end of our gallery."
+  },
+  "ceo": {
+    "heading": "Message from the CEO",
+    "subheading": "A few words from our founder, dedicated to helping students unlock their potential and discover new possibilities in Japan."
+  }
+}

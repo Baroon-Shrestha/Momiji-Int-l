@@ -1,64 +1,11 @@
 import React, { useState, useEffect } from "react";
-
-const slides = [
-  {
-    title: "High Visa Success Rate",
-    content: "Personalized Counseling by Industry Professionals",
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop",
-    description:
-      "Our experienced counselors provide tailored advice on university selection, course alignment, and visa procedures to help you achieve your study-abroad goals.",
-    icon: "🎯",
-  },
-  {
-    title: "Certified & Experienced Counselors",
-    content: "From Documentation to Interview Preparation",
-    image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop",
-    description:
-      "We assist with all aspects of the admission process—shortlisting institutions, preparing SOPs and LoRs, completing applications, and preparing for interviews.",
-    icon: "👨‍🎓",
-  },
-  {
-    title: "Transparent Workflow System",
-    content: "No Hidden Charges, Clear Process",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
-    description:
-      "Our experts help identify and apply for relevant scholarships and assistantships, increasing your chances of receiving funding or tuition waivers.",
-    icon: "💎",
-  },
-  {
-    title: "Partnership With Japanese Universities",
-    content: "Accurate, Timely, Hassle-Free Processing",
-    image:
-      "https://images.unsplash.com/photo-1549057446-9f5c6ac91a04?w=800&h=600&fit=crop",
-    description:
-      "We provide complete support with visa applications, document checklists, mock interviews, and embassy guidelines—so you can proceed confidently.",
-    icon: "🏛️",
-  },
-  {
-    title: "Personalized Counselling Approach",
-    content: "Tailored Solutions for Every Student",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
-    description:
-      "From accommodation search to orientation on culture, travel, and budgeting, our pre-departure and post-arrival guidance ensures a smooth transition.",
-    icon: "🤝",
-  },
-  {
-    title: "Pre & Post Departure Support",
-    content: "Helping You Settle Abroad with Confidence",
-    image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop",
-    description:
-      "From accommodation search to orientation on culture, travel, and budgeting, our pre-departure and post-arrival guidance ensures a smooth transition.",
-    icon: "✈️",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function AccordionSlider() {
   const [active, setActive] = useState(0);
+  const { t } = useTranslation();
+
+  const slides = t("home.why.highlights.items", { returnObjects: true });
 
   const handleSlideClick = (index) => {
     setActive(index);

@@ -125,7 +125,7 @@ export default function Team() {
 
   return (
     // <div className="min-h bg-gradient-to-br from-gray-50 to-gray-100 py-16">
-    <div className="bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-[#FFFAE9] rounded-4xl pt-12 mb-16">
+    <div className="mx-6 bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-[#FFFAE9] rounded-4xl pt-12 mb-16">
       <div className="container mx-auto px-4 relative">
         {/* Background Text */}
         <div className="absolute left-1/2  top-0 transform -translate-x-1/2 -translate-y-12 pointer-events-none">

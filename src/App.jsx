@@ -19,6 +19,8 @@ import ScrollToTop from "./Components/HelperComponents/ScrollToTop";
 import OurTeamsCopy from "./Components/AboutComponents/OurTeamsCopy";
 import FAQmain from "./Components/FAQComponents/FAQmain";
 import ChatBot from "./Components/ChatComponents/ChatBot";
+import LanguageSwitcher from "./Components/HelperComponents/LanguageSwitcher";
+import NotFound from "./Pages/NotFound";
 
 const mainContentVariants = {
   hidden: {
@@ -58,6 +60,7 @@ function App() {
  > */}
       <ScrollToTop />
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -70,11 +73,13 @@ function App() {
         <Route path="/services/faq" element={<FAQmain />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
 
       {/* ChatBot - Will appear on all pages */}
       <ChatBot />
+      <LanguageSwitcher />
 
       {/* </motion.div> */}
       {/* )} */}

@@ -4,7 +4,9 @@ import unimg1 from "../../assets/Images/img02.avif";
 import unimg2 from "../../assets/Images/img5.jpeg";
 import unimg3 from "../../assets/Images/img5.jpeg";
 import { div } from "framer-motion/client";
+import { useTranslation } from "react-i18next";
 // Mock images
+
 const img1 = unimg1;
 const img2 = unimg2;
 const img3 = unimg3;
@@ -21,6 +23,7 @@ const listOfUni = [
 ];
 
 export default function FeaturedUniversities() {
+  const { t } = useTranslation();
   const controls = useAnimation();
 
   const carouselRef = useRef(null);
@@ -56,7 +59,7 @@ export default function FeaturedUniversities() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Featured Universities
+          {t("home.uni.heading")}
         </motion.div>
 
         <motion.p
@@ -65,8 +68,7 @@ export default function FeaturedUniversities() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Explore some of the reputed institutions we partner with. Our network
-          of universities ensures quality education and global recognition.
+          {t("home.uni.subheading")}
         </motion.p>
 
         <div className="overflow-hidden w-full relative">

@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import heroImg from "../../../assets/Images/img2.jpeg";
 import { MessageCircle, X, Minimize2 } from "lucide-react";
+import video from "../../../assets/Images/tryout.mp4";
 
 const heroImage = heroImg;
 const coffeeImage2 =
@@ -62,10 +63,8 @@ export default function AboutHero() {
               }`}
             >
               <div className="space-y-6">
-                <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-orange-400/30">
-                  <span className="text-white text-sm font-medium">
-                    Study With Us
-                  </span>
+                <div className="text-lg  md:text-lg font-light text-white">
+                  About Us
                 </div>
 
                 <h1 className="text-2xl md:text-3xl lg:text-5xl font-black  text-white">
@@ -145,32 +144,22 @@ export default function AboutHero() {
         </div>
       </div>
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-[50%] z-50 flex items-center justify-center px-4">
-          <div className="relative max-w-3xl w-full bg-white rounded-xl shadow-2xl overflow-hidden">
+        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 flex items-center justify-center px-4">
+          <div className="relative max-w-4xl w-full bg-white rounded-xl shadow-2xl overflow-hidden max-h-[90vh]">
             {/* Close Button */}
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-3 right-3 text-gray-800 hover:text-red-600"
+              className="absolute top-3 right-3 text-gray-800 hover:text-red-600 z-10 bg-white rounded-full p-1"
             >
               <X size={24} />
             </button>
 
-            {/* Image */}
-            <img
-              src={heroImage}
-              alt="Demo"
-              className="w-full h-[400px] object-cover rounded-xl"
-            />
-
-            {/* <div className="p-4 text-center">
-              <h2 className="text-xl font-bold text-slate-800 mb-2">
-                Demo Preview
-              </h2>
-              <p className="text-gray-600">
-                Here's a glimpse of what your learning journey looks like with
-                Momiji.
-              </p>
-            </div> */}
+            <iframe
+              src={video}
+              className="w-full h-[70vh] min-h-[400px]"
+              allow="autoplay; fullscreen"
+              title="Video Player"
+            ></iframe>
           </div>
         </div>
       )}

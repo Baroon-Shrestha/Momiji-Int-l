@@ -47,7 +47,7 @@ export default function Motto() {
   ];
 
   return (
-    <div className="min-h-scree py-16">
+    <div className="min-h-scree py-16 ">
       <div className="container mx-auto px-6">
         {/* Hero Section */}
         <div className="text-center mb-12">

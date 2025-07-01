@@ -4,7 +4,7 @@ import Carousel from "../../HelperComponents/Carousel";
 export default function Universities() {
   return (
     <>
-      <div className="bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-[#FFFAE9] py-12">
+      <div className="bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-[#FFFAE9] mx-6 rounded-4xl py-12">
         <div className="container mx-auto my-12 relative">
           <div className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-12 pointer-events-none">
             <span className="text-8xl md:text-[12rem] lg:text-[15rem] font-extrabold text-wite opacity-10 select-none whitespace-nowrap">
