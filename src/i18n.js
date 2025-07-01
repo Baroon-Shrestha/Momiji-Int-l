@@ -4,8 +4,9 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 // Import translations
-import en from "./locales/en.json";
-import ja from "./locales/ja.json";
+
+import ja from "./Locales/ja.json";
+import en from "./Locales/en.json";
 
 // Configure i18n
 i18n
