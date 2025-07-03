@@ -11,6 +11,8 @@
     "teamsubhead": "Meet the experts",
     "ceohead": "From CEO",
     "ceosubhead": "Words from CEO",
+    "co_head": "From Co-ordinator",
+    "co_subhead": "Words from Co-ordinator",
     "consulthead": "Consulting",
     "consultsubhead": " Strategic guidance & expertise",
     "scholarhead": "Scholarship",
@@ -88,13 +90,15 @@
             "title": "High Visa Success Rate",
             "content": "Personalized Counseling by Industry Professionals",
             "description": "Our experienced counselors provide tailored advice on university selection, course alignment, and visa procedures to help you achieve your study-abroad goals.",
-            "icon": "🎯"
+            "icon": "🎯",
+            "image": "/visa.jpg"
           },
           {
             "title": "Certified & Experienced Counselors",
             "content": "From Documentation to Interview Preparation",
             "description": "We assist with all aspects of the admission process—shortlisting institutions, preparing SOPs and LoRs, completing applications, and preparing for interviews.",
-            "icon": "👨‍🎓"
+            "icon": "👨‍🎓",
+            "image": "/team.jpg"
           },
           {
             "title": "Transparent Workflow System",
@@ -106,19 +110,22 @@
             "title": "Partnership With Japanese Universities",
             "content": "Accurate, Timely, Hassle-Free Processing",
             "description": "We provide complete support with visa applications, document checklists, mock interviews, and embassy guidelines—so you can proceed confidently.",
-            "icon": "🏛️"
+            "icon": "🏛️",
+            "image": "/partner.jpg"
           },
           {
             "title": "Personalized Counselling Approach",
             "content": "Tailored Solutions for Every Student",
             "description": "From accommodation search to orientation on culture, travel, and budgeting, our pre-departure and post-arrival guidance ensures a smooth transition.",
-            "icon": "🤝"
+            "icon": "🤝",
+            "image": "/conunselling.jpg"
           },
           {
             "title": "Pre & Post Departure Support",
             "content": "Helping You Settle Abroad with Confidence",
             "description": "From accommodation search to orientation on culture, travel, and budgeting, our pre-departure and post-arrival guidance ensures a smooth transition.",
-            "icon": "✈️"
+            "icon": "✈️",
+            "image": "/departure.jpg"
           }
         ]
       },
@@ -172,7 +179,11 @@
     "footer": "You have reached the end of our gallery."
   },
   "ceo": {
-    "heading": "Message from the CEO",
+    "heading": "Message from our CEO",
     "subheading": "A few words from our founder, dedicated to helping students unlock their potential and discover new possibilities in Japan."
+  },
+  "coordinator": {
+    "heading": "Message from our Co-ordinator",
+    "subheading": "Words of inspiration from our Co-ordinator—guiding ambitious minds toward brighter futures and new horizons in Japan."
   }
 }

@@ -125,7 +125,7 @@ export default function Team() {
 
   return (
     // <div className="min-h bg-gradient-to-br from-gray-50 to-gray-100 py-16">
-    <div className="mx-6 bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-[#FFFAE9] rounded-4xl pt-12 mb-16">
+    <div className="bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-[#FFFAE9] rounded-4xl pt-12 mb-16">
       <div className="container mx-auto px-4 relative">
         {/* Background Text */}
         <div className="absolute left-1/2  top-0 transform -translate-x-1/2 -translate-y-12 pointer-events-none">
@@ -152,29 +152,32 @@ export default function Team() {
         {/* Carousel Container */}
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            disabled={isAnimating}
-            className={`absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-6 z-30 bg-white hover:bg-gray-50 shadow-xl rounded-full p-4 transition-all duration-300 border border-gray-100 ${
-              isAnimating
-                ? "opacity-50 cursor-not-allowed"
-                : "hover:scale-110 hover:shadow-2xl active:scale-95"
-            }`}
-          >
-            <ChevronLeft className="w-6 h-6 text-gray-700" />
-          </button>
+          {/* Top-right Buttons Container */}
+          <div className="flex justify-end items-center gap-2 mb-4 pr-8 relative z-20">
+            <button
+              onClick={prevSlide}
+              disabled={isAnimating}
+              className={`bg-white hover:bg-gray-50 shadow-xl rounded-full p-3 transition-all duration-300 border border-gray-100 ${
+                isAnimating
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:scale-110 hover:shadow-2xl active:scale-95"
+              }`}
+            >
+              <ChevronLeft className="w-5 h-5 text-gray-700" />
+            </button>
 
-          <button
-            onClick={nextSlide}
-            disabled={isAnimating}
-            className={`absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-6 z-30 bg-white hover:bg-gray-50 shadow-xl rounded-full p-4 transition-all duration-300 border border-gray-100 ${
-              isAnimating
-                ? "opacity-50 cursor-not-allowed"
-                : "hover:scale-110 hover:shadow-2xl active:scale-95"
-            }`}
-          >
-            <ChevronRight className="w-6 h-6 text-gray-700" />
-          </button>
+            <button
+              onClick={nextSlide}
+              disabled={isAnimating}
+              className={`bg-white hover:bg-gray-50 shadow-xl rounded-full p-3 transition-all duration-300 border border-gray-100 ${
+                isAnimating
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:scale-110 hover:shadow-2xl active:scale-95"
+              }`}
+            >
+              <ChevronRight className="w-5 h-5 text-gray-700" />
+            </button>
+          </div>
 
           {/* Cards Container */}
           <div className="flex items-center justify-center h-80 px-8 relative overflow-hidden">
@@ -192,7 +195,8 @@ export default function Team() {
                       : "cursor-default"
                   }`}
                   style={{
-                    width: isCenter ? "600px" : "480px",
+                    width: isCenter ? "90vw" : "80vw", // Use viewport width
+                    maxWidth: isCenter ? "600px" : "480px",
                     height: isCenter ? "280px" : "240px",
                     transform: `translateX(${member.position * 320}px) scale(${
                       isCenter ? 1 : 0.9
@@ -241,7 +245,7 @@ export default function Team() {
                               scrollbarColor: "#fbbf24 #f3f4f6",
                             }}
                           >
-                            <p className="text-gray-600 leading-relaxed text-sm">
+                            <p className="text-gray-600 leading-relaxed text-[12px] md:text-sm">
                               {member.description}
                             </p>
                           </div>

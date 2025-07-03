@@ -207,6 +207,30 @@ export default function Navbar() {
                       </div>
                     </div>
                   </NavLink>
+                  <NavLink
+                    to="/about/coordinator"
+                    className="flex items-center gap-3 px-6 py-4 hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 transition-all duration-200 border-b border-gray-100 group"
+                  >
+                    <Heart
+                      size={20}
+                      className="group-hover:text-orange-600 transition-colors duration-200"
+                      style={{ color: "#FF8B0F" }}
+                    />
+                    <div>
+                      <div
+                        className="font-semibold text-gray-900 group-hover:transition-colors duration-200"
+                        style={{ color: "#FF8B0F" }}
+                      >
+                        {t("nav.co_head")}
+                      </div>
+                      <div
+                        className="text-sm text-gray-500 group-hover:transition-colors duration-200"
+                        style={{ color: "#FF8B0F" }}
+                      >
+                        {t("nav.co_subhead")}
+                      </div>
+                    </div>
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -453,6 +477,15 @@ export default function Navbar() {
                   >
                     <Heart size={16} />
                     {t("nav.ceohead")}
+                  </NavLink>
+                  <NavLink
+                    to="/about/coordinator"
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 text-orange-600 hover:text-orange-700 hover:bg-orange-50"
+                    style={{ color: "#FF8B0F" }}
+                  >
+                    <Heart size={16} />
+                    {t("nav.co_head")}
                   </NavLink>
                 </div>
               </div>

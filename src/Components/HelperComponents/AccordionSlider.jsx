@@ -28,7 +28,7 @@ export default function AccordionSlider() {
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+            <div className="absolute inset-0 "></div>
             <div className="relative z-10 p-4 h-full flex flex-col justify-center">
               <div className="flex items-center space-x-3 mb-2">
                 <h3 className="text-white font-bold text-lg leading-tight">

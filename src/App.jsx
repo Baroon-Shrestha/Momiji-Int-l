@@ -21,6 +21,7 @@ import FAQmain from "./Components/FAQComponents/FAQmain";
 import ChatBot from "./Components/ChatComponents/ChatBot";
 import LanguageSwitcher from "./Components/HelperComponents/LanguageSwitcher";
 import NotFound from "./Pages/NotFound";
+import Coordiantor from "./Components/AboutComponents/coordiantor";
 
 const mainContentVariants = {
   hidden: {
@@ -67,6 +68,7 @@ function App() {
         <Route path="/about/team" element={<OurTeamsCopy />} />
         <Route path="/about/vision" element={<Vision />} />
         <Route path="/about/ceo" element={<CEO />} />
+        <Route path="/about/coordinator" element={<Coordiantor />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/consulting" element={<Consulting />} />
         <Route path="/services/scholarship" element={<ScholarhipMain />} />
