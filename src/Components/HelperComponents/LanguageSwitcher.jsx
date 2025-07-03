@@ -28,12 +28,12 @@ export default function LanguageSwitcher() {
     <div className="fixed bottom-4 right-6 z-50">
       <button
         onClick={toggleLanguage}
-        className="group flex items-center gap-6 px-2 py-2 bg-white/90 backdrop-blur-md border border-gray-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500/30 active:scale-95"
+        className="group flex items-center gap-2 md:gap-4 px-2 py-1 bg-white/90 backdrop-blur-md border border-gray-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500/30 active:scale-95"
       >
         <span className="text-xl group-hover:scale-110 transition-transform duration-200">
           {currentLanguage.flag}
         </span>
-        <div className="flex flex-col items-start">
+        <div className="hidden md:flex flex-col items-start">
           <span className="font-medium text-gray-700 text-sm">
             {currentLanguage.label}
           </span>
