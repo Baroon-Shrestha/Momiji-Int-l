@@ -17,19 +17,21 @@ export default function Introduction() {
           </p>
         </div>
 
-        <p className="text-base sm:text-lg md:text-xl font-bolder text-center text-gray-700 max-w-7xl">
+        <p className="text-base sm:text-lg md:text-xl font-bolder text-justify text-gray-700 max-w-7xl">
           {t("home.intro.paragraph1")} <br />
           <br />
           {t("home.intro.paragraph2")}
           <br />
           <br />
-          <span className="text-[#F78C1F] font-bold">
-            {t("home.intro.ending1")}{" "}
-          </span>
-          <br />{" "}
-          <span className="font-extralight text-center">
-            "{t("home.intro.ending2")}"
-          </span>
+          <div className="text-center">
+            <span className="text-[#F78C1F] font-bold">
+              {t("home.intro.ending1")}{" "}
+            </span>
+            <br />{" "}
+            <span className="font-extralight text-center">
+              "{t("home.intro.ending2")}"
+            </span>
+          </div>
         </p>
 
         <img

@@ -12,7 +12,7 @@ export default function Footer() {
   };
 
   const handleEmailClick = () => {
-    window.open("mailto:baroonshrestha4@gmail.com", "_self");
+    window.open("mailto:momijiinepal@gmail.com", "_self");
   };
 
   return (
@@ -75,9 +75,12 @@ export default function Footer() {
                     <Phone size={16} />
                     <span>+977 98XXXXXXXX</span>
                   </li>
-                  <li className="mb-1 flex items-center gap-2 text-gray-300">
+                  <li
+                    className="mb-1 flex items-center gap-2 text-gray-300"
+                    onClick={handleEmailClick}
+                  >
                     <Mail size={16} />
-                    <span>info@momijiacademy.com</span>
+                    <span>momijiinepal@gmail.com</span>
                   </li>
                   <li className="mb-1 flex items-center gap-2 text-gray-300">
                     <MapPin size={16} />

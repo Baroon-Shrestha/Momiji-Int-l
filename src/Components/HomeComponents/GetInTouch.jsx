@@ -16,7 +16,7 @@ export default function GetInTouch() {
   };
 
   const handleEmailClick = () => {
-    window.open("mailto:info@momijiacademy.com", "_self");
+    window.open("mailto:momijiinepal@gmail.com", "_self");
   };
 
   const handleDirectionsClick = () => {
@@ -98,7 +98,7 @@ export default function GetInTouch() {
                       onClick={handleEmailClick}
                       className="text-gray-600 hover:text-amber-600 transition-colors duration-200"
                     >
-                      info@momijiacademy.com
+                      momijiinepal@gmail.com
                     </button>
                   </div>
                 </div>
