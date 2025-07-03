@@ -15,7 +15,9 @@ import {
   Building,
   Lightbulb,
   Headphones,
+  User,
 } from "lucide-react";
+
 import logo from "../assets/logo2.png";
 import { useTranslation } from "react-i18next";
 
@@ -211,7 +213,7 @@ export default function Navbar() {
                     to="/about/coordinator"
                     className="flex items-center gap-3 px-6 py-4 hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 transition-all duration-200 border-b border-gray-100 group"
                   >
-                    <Heart
+                    <User
                       size={20}
                       className="group-hover:text-orange-600 transition-colors duration-200"
                       style={{ color: "#FF8B0F" }}
@@ -484,7 +486,7 @@ export default function Navbar() {
                     className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 text-orange-600 hover:text-orange-700 hover:bg-orange-50"
                     style={{ color: "#FF8B0F" }}
                   >
-                    <Heart size={16} />
+                    <User size={16} />
                     {t("nav.co_head")}
                   </NavLink>
                 </div>

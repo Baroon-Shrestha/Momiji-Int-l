@@ -21,7 +21,7 @@ import FAQmain from "./Components/FAQComponents/FAQmain";
 import ChatBot from "./Components/ChatComponents/ChatBot";
 import LanguageSwitcher from "./Components/HelperComponents/LanguageSwitcher";
 import NotFound from "./Pages/NotFound";
-import Coordiantor from "./Components/AboutComponents/coordiantor";
+import Coordiantor from "./Components/AboutComponents/Coordinator";
 
 const mainContentVariants = {
   hidden: {
