@@ -11,40 +11,11 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Motto() {
-  const services = [
-    {
-      icon: <GraduationCap className="w-5 h-5" />,
-      title: "Academic & Career Counseling",
-      description: "Personalized guidance for your educational path",
-    },
-    {
-      icon: <BookOpen className="w-5 h-5" />,
-      title: "Standardized Test Preparation",
-      description: "Comprehensive prep for all required exams",
-    },
-    {
-      icon: <FileText className="w-5 h-5" />,
-      title: "Admission Process Assistance",
-      description: "Complete application support and guidance",
-    },
-    {
-      icon: <FileText className="w-5 h-5" />,
-      title: "Essay & Documentation Support",
-      description: "Professional writing and document assistance",
-    },
-    {
-      icon: <Users className="w-5 h-5" />,
-      title: "Visa Processing & Interview Preparation",
-      description: "Full visa support and interview coaching",
-    },
-    {
-      icon: <Plane className="w-5 h-5" />,
-      title: "Pre-departure Orientation & Post-visa Guidance",
-      description: "Prepare for life and study in Japan",
-    },
-  ];
+  const { t } = useTranslation();
+  const services = t("services.motto.services", { returnObjects: true });
 
   return (
     <div className="min-h-scree py-16 ">
@@ -53,18 +24,14 @@ export default function Motto() {
         <div className="text-center mb-12">
           {/* Main Headline */}
           <h1 className="text-3xl md:text-4xl font-extrabold mb-8 leading-tight capitalize">
-            <span className="">Your Success </span>
-            <span className="text-gray-00">is our main goal.</span>
+            <span className="">{t("services.motto.heading1")} </span>
+            <span className="text-gray-00">{t("services.motto.heading2")}</span>
           </h1>
 
           {/* Subtitle */}
           <div className="max-w-4xl mx-auto">
             <p className="text-lg md:text-xl leading-relaxed mb-8 font-extralight">
-              At our consultancy, we provide end-to-end support to students
-              aspiring to pursue higher education in Japan. Whether in-person or
-              virtually (on request), our dedicated team assists you throughout
-              the entire journey—from university selection to post-arrival
-              settlement.
+              {t("services.motto.subheading")}
             </p>
           </div>
         </div>
@@ -75,7 +42,7 @@ export default function Motto() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-">
               <h2 className="text-2xl font-bold text-gray-800">
-                We Will Be There With You At Your Each Step
+                {t("services.motto.servicehead")}
               </h2>
             </div>
             <div className="w-32 h-1 bg-gradient-to-r from-amber-400 to-amber-200 rounded-full mx-auto"></div>
@@ -117,15 +84,21 @@ export default function Motto() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-center">
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <div className="text-3xl font-bold text-amber-400 mb-2">500+</div>
-              <div className="text-gray-600">Students Guided</div>
+              <div className="text-gray-600">
+                {t("services.motto.stats.students")}
+              </div>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <div className="text-3xl font-bold text-green-600 mb-2">95%</div>
-              <div className="text-gray-600">Success Rate</div>
+              <div className="text-gray-600">
+                {t("services.motto.stats.success")}
+              </div>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <div className="text-3xl font-bold text-purple-600 mb-2">10+</div>
-              <div className="text-gray-600">Partner Universities</div>
+              <div className="text-gray-600">
+                {t("services.motto.stats.uni")}
+              </div>
             </div>
           </div>
         </div>

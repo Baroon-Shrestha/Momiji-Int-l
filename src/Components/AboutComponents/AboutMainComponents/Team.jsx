@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import ceoImg from "../../../assets/CEO.jpg";
 
 export default function Team() {
   const [currentSlide, setCurrentSlide] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
   const [direction, setDirection] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   // Team members data
   const teamMembers = [
     {
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: ceoImg,
       name: "Jitendra Shrestha",
       role: "CEO & Founder",
       description:
@@ -65,6 +67,16 @@ export default function Team() {
         "Rising culinary talent with exceptional skills and creative flair. Alex supports our kitchen operations with precision and brings fresh ideas to our menu development.",
     },
   ];
+
+  const openModal = (index) => {
+    setSelectedIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedIndex(null);
+  };
 
   const nextSlide = () => {
     if (isAnimating) return;
@@ -207,7 +219,8 @@ export default function Team() {
                       : "brightness(0.9) saturate(0.8)",
                     zIndex: isCenter ? 20 : isVisible ? 10 : 1,
                   }}
-                  onClick={() => isClickable && goToSlide(member.index)}
+                  // onClick={() => isClickable && goToSlide(member.index)}
+                  onClick={() => openModal(member.index)}
                 >
                   <div className="bg-white rounded-2xl shadow-2xl overflow-hidden h-full border border-gray-100 hover:shadow-3xl transition-shadow duration-300">
                     <div className="flex h-full">
@@ -257,8 +270,43 @@ export default function Team() {
               );
             })}
           </div>
+          <div className="py-6 text-base md:text-xl capitalize text-center">
+            click to view description
+          </div>
         </div>
       </div>
+
+      {isModalOpen && selectedIndex !== null && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-auto">
+            <div className="relative flex flex-col md:flex-row items-center gap-6">
+              <img
+                src={teamMembers[selectedIndex].image}
+                alt={teamMembers[selectedIndex].name}
+                className="w-[40vh] h-full object-cover  shadow-lg rounded-xl"
+              />
+              <button
+                onClick={closeModal}
+                className="absolute top-0 p-4 right-5 text-red-700 hover:text-red-400"
+              >
+                <X size={30} />
+              </button>
+
+              <div className="text-left space-y-2 p-4">
+                <h2 className="text-3xl font-bold text-[#701919]">
+                  {teamMembers[selectedIndex].name}
+                </h2>
+                <h4 className="text-lg font-semibold text-[#D1863C]">
+                  {teamMembers[selectedIndex].role}
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  {teamMembers[selectedIndex].description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Styles */}
       <style>{`

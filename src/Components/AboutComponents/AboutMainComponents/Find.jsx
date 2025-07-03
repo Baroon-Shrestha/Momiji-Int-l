@@ -7,27 +7,27 @@ import { div } from "framer-motion/client";
 const cardData = [
   {
     id: 1,
-    image: img3,
-    icon: "🎓",
-    title: "Language Classes",
+    image: img1,
+    icon: "🗣️",
+    title: "Japanese Language Mastery",
     description:
-      "Learn Japanese with expert guidance and interactive sessions. Master grammar, vocabulary, and conversation skills through immersive learning experiences.",
+      "Build fluency in spoken and written Japanese through structured lessons, JLPT-focused training, and practical conversation exercises designed to boost confidence and comprehension.",
   },
   {
     id: 2,
-    image: img1,
-    icon: "🎌",
-    title: "Cultural Immersion",
+    image: img2,
+    icon: "🎎",
+    title: "Cultural Immersion Program",
     description:
-      "Discover the rich traditions and customs of Japan. Experience authentic cultural practices, festivals, and traditional arts in our immersive programs.",
+      "Dive into authentic Japanese culture with workshops, etiquette sessions, and seasonal activities. From tea ceremonies to local festivals, get hands-on cultural experiences.",
   },
   {
     id: 3,
-    image: img2,
-    icon: "🏯",
-    title: "Study Abroad",
+    image: img3,
+    icon: "💼",
+    title: "Career & Study Pathway",
     description:
-      "Take your learning to the next level with our study abroad programs in Japan. Live with host families and experience daily life in Japan.",
+      "Plan your future in Japan with expert guidance. Explore job placement assistance, vocational pathways, and university admissions tailored to your long-term goals.",
   },
 ];
 
@@ -41,9 +41,11 @@ export default function Find() {
             <div className="text-4xl md:text-4xl font-bold mb-4 md:mb-0">
               Start your journey
             </div>
-            <div className="text-xl font-extralight text-center">
-              At Momiji, we teach Japanese language and culture through
-              immersive experiences
+            <div className="text-xl font-extralight max-w-4xl text-center text-gray-700 leading-relaxed">
+              Find yourself in an enriching environment where students thrive
+              through immersive Japanese language instruction and cultural
+              exposure. We blend interactive learning with real-world context to
+              help you succeed not just in the classroom — but in Japan itself.
             </div>
           </div>
 

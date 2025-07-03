@@ -1,3 +1,4 @@
+import { div } from "framer-motion/client";
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -25,9 +26,10 @@ export default function AccordionSlider() {
             <img
               src={slide.image}
               alt={slide.title}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover "
               loading="lazy"
             />
+            <div className="bg-black absolute inset-0 opacity-50"></div>
             <div className="absolute inset-0 "></div>
             <div className="relative z-10 p-4 h-full flex flex-col justify-center">
               <div className="flex items-center space-x-3 mb-2">

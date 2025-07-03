@@ -124,7 +124,7 @@ export default function FullGallery() {
           </div>
         </section>
 
-        <div className="container mx-auto my-20">
+        <div className="container mx-auto my-20 px-4 md:px-0">
           {layoutType === "improved-masonry" && renderImprovedMasonry()}
 
           <div className="text-2xl font-extralight capitalize text-center my-8">

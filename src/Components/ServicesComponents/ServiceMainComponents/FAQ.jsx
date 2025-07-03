@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Accordion from "../../HelperComponents/Accordion";
 import { Award, BookOpen, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function FAQ() {
+  const { t } = useTranslation();
   const [accordion, setAccordion] = useState([
     {
       id: 1,
@@ -90,9 +92,9 @@ export default function FAQ() {
       <div className="container mx-auto py-12">
         <div className="text-center mb-12">
           <h1 className="text-2xl sm:text-2xl md:text-4xl font-extrabold text-gray-900 mb-6">
-            Frequently Asked Questions{" "}
+            {t("services.faq.heading1")}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B]">
-              (FAQ's)
+              ({t("services.faq.heading2")})
             </span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-extralight">

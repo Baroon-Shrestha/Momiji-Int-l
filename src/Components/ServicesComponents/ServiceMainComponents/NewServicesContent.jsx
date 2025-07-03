@@ -1,33 +1,10 @@
 import React from "react";
-
-const servicesData = [
-  {
-    id: 1,
-    title: "Merit-Based Scholarship",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim temporibus veritatis doloremque odit, nemo quos nisi laudantium? Similique ex esse laboriosam ducimus accusamus, quasi corrupti repellendus, assumenda dicta, blanditiis eveniet aperiam aliquid ipsa cupiditate. Enim culpa ipsum quia fugit, similique suscipit alias eum aut sequi, veritatis provident, a perspiciatis voluptatem?",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
-  },
-  {
-    id: 2,
-    title: "Need-Based Scholarship",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum at itaque veniam nihil, quaerat assumenda ex qui cumque pariatur voluptatibus distinctio quia eum repellendus molestias! Libero architecto nisi neque quae consequuntur debitis! Alias ex hic, velit minus et ut, atque ad optio minima molestias officia similique amet quisquam recusandae sit!",
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
-  },
-  {
-    id: 3,
-    title: "Language Proficiency Scholarships",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eum vel dolores harum sint inventore explicabo saepe aspernatur mollitia, tenetur molestiae asperiores impedit. Dolorem eveniet nemo ipsam minus doloribus iusto ipsum laboriosam! Saepe, repudiandae ex quas reprehenderit voluptas pariatur molestiae amet provident totam explicabo ipsam quia, consectetur laborum assumenda error.",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function NewServicesContent() {
+  const { t } = useTranslation();
+  const servicesData = t("services.types.typesdata", { returnObjects: true });
+
   return (
     <>
       <div className="container mx-auto px-4 pb-12" id="services-container">
@@ -57,7 +34,7 @@ export default function NewServicesContent() {
                   <div className="flex-1 lg:px-8 space-y-4">
                     <div className="flex items-center gap-4">
                       <div className="w-8 h-8 py-8 rounded-full flex items-center justify-center font-extrabold text-7xl opacity-40">
-                        {service.id}
+                        {index + 1}
                       </div>
                       <div className="flex flex-col">
                         <div className="text-xl lg:text-2xl font-bold">

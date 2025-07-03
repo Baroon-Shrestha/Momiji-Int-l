@@ -1,5 +1,8 @@
 {
+  "momiji": { "head": "モミジ国際アカデミー" },
   "nav": {
+    "quick": "クイックリンク",
+    "touch": "接触する",
     "home": "家庭",
     "about": "私たちについて",
     "gallery": "ギャラリー",
@@ -19,6 +22,16 @@
     "scholarsubhead": "奨学金と財政援助",
     "faqhead": "よくある質問",
     "faqsubhead": "弊社からの問い合わせとサポート"
+  },
+  "footer": {
+    "cta": {
+      "heading": "すぐに助けが必要ですか?",
+      "subheading": "モミジインターナショナルアカデミーに関するご質問があれば、お気軽にお問い合わせください。",
+      "buttons": {
+        "call": "今すぐ電話してください",
+        "email": "電子メールを送信する"
+      }
+    }
   },
   "notfound": {
     "heading": "ページが見つかりません",
@@ -84,7 +97,9 @@
     },
     "why": {
       "heading": "モミジを選ぶ理由?",
-      "subheading": "私たちの最大の強みは、日本の教育機関、入学要件、そして文化適応に関する正確で最新の情報を提供できることです。経験豊富で情熱的なチームが、お客様の時間を節約し、安心して留学生活を送っていただけるよう、シームレスな留学体験をお届けします.",
+      "subheading1": "モミジの最大の強みは、日本の教育機関、入学要件、そして文化適応に関する正確で最新のガイダンスを提供することです。経験豊富で情熱的なチームがサポートし、スムーズで効率的なプロセスを実現することで、お客様の時間を節約し、自信を深めていただけるよう努めています。",
+      "subheading2": "しかし、専門知識にとどまらず、私たちはお客様の夢を私たち自身の夢として大切に考えています。私たちを選ぶということは、単なるコンサルティングではなく、日本でのお客様の未来を真摯に形作ることに尽力する献身的なパートナーを得ることを意味します。",
+
       "highlights": {
         "items": [
           {
@@ -186,5 +201,177 @@
   "coordinator": {
     "heading": "コーディネーターからのメッセージ",
     "subheading": "私たちのコーディネーターからの励ましの言葉。日本でのより明るい未来と新たな地平に向けて、野心的な人々を導きます。"
+  },
+  "services": {
+    "hero": { "heading": "当社のサービス", "subheading": "" },
+    "proven": {
+      "heading1": "私たちの",
+      "heading2": "実証済みのプロセス",
+      "heading3": "卓越性のために"
+    },
+    "servicesContent": {
+      "sections": [
+        {
+          "title": "無料の1対1カウンセリング — ご相談ください!",
+          "content": "私たちはまず、あなたの目標、夢、そして情熱を深く理解することから始めます。どの大学を選ぶべきか、どのコースがあなたの将来にとって最適か、まだ迷っている場合でも、私たちがお手伝いします。",
+          "conv": "私たちは、初日からお客様の旅がストレスフリーなものとなるよう尽力いたします。"
+        },
+        {
+          "title": "日本の大学・コース選び - パーソナライズされたガイダンス",
+          "content": "日本には、それぞれに独自の強みを持つトップクラスの大学や語学学校が数多くあります。あなたの興味、予算、そして長期的な目標に合わせて、語学プログラム、専門学校、学位取得コースなど、最適な大学とコース選びをお手伝いします。",
+          "conv": "人気のあるものだけでなく、あなたにとって最適なものをお勧めします。"
+        },
+        {
+          "title": "文書作成 - 混乱なし、間違いなし",
+          "content": "SOP（志望理由書）から推薦状、履歴書など、必要な書類はすべて私たちがサポートします。さらに、書類をレビューし、磨きをかけることで、強い印象を与えられるようお手伝いします。",
+          "conv": "もう何を書けばいいのか迷う必要はありません。私たちがあなたのストーリーを完璧に伝えるお手伝いをします。"
+        },
+        {
+          "title": "迅速かつスムーズな申請プロセス",
+          "content": "書類が準備できたら、申請プロセス全体を当社が担当し、すべてが正しく期限内に提出されるよう確認いたします。各ステップで詳細をお知らせいたします。",
+          "conv": "お客様の申請は正確かつ専門的に処理され、遅延や混乱が生じることはありません。"
+        },
+        {
+          "title": "面接とテストのガイダンス",
+          "content": "NAT、JLPT、学生ビザ面接対策が必要ですか？ご安心ください。模擬試験、専門家によるコーチング、そして個別練習セッションで万全の準備を整えます。",
+          "conv": "私たちはあなたのスコアだけでなく、自信を高めるお手伝いをします。"
+        },
+        {
+          "title": "ビザ申請から出国までフルサポート",
+          "content": "ビザ申請手続き、すべての確認、そして承認までサポートいたします。ご出発の準備が整ったら、航空券の手配、宿泊施設の手配、さらには出発前のオリエンテーションまで、お手伝いいたします。",
+          "conv": "はい、着陸した後も私たちはあなたと一緒にいます。"
+        }
+      ]
+    },
+    "motto": {
+      "heading1": "あなたの成功",
+      "heading2": "私たちの主な目標です。",
+      "subheading": "私たちのコンサルティングサービスでは、日本で高等教育を目指す学生の皆様に、エンドツーエンドのサポートを提供しています。対面またはオンライン（ご要望に応じて）でのサポートを承ります。専任チームが、大学選びから到着後の生活定着まで、留学のプロセス全体を通してサポートいたします。",
+      "servicehead": "私たちはあなたの一歩一歩に寄り添います",
+      "services": [
+        {
+          "icon": "🎓",
+          "title": "学術・キャリアカウンセリング",
+          "description": "あなたの学業の進路と日本でのキャリアの機会を一致させるためのカスタマイズされたアドバイスを受けられます。"
+        },
+        {
+          "icon": "📝",
+          "title": "書類および申請のサポート",
+          "description": "大学への出願、SOP、書類作成に関するガイド付きサポート。"
+        },
+        {
+          "icon": "🎌",
+          "title": "言語とテストのレーニング",
+          "description": "専門家によるトレーニングで、JLPT、NAT、面接の要件に備えましょう。"
+        },
+        {
+          "icon": "📋",
+          "title": "ビザ申請と大使館での手続き",
+          "description": "学生ビザの申請、大使館の要件、書類作成など、ストレスフリーなサポートを提供します。"
+        },
+        {
+          "icon": "✈️",
+          "title": "Pre-departure orientation",
+          "description": "日本での生活（文化、予算、規則、生活環境など）について学びます。"
+        },
+        {
+          "icon": "🏠",
+          "title": "来日後のサポート",
+          "description": "宿泊施設、アルバイト、保険、日本の生活への適応などをサポートします。"
+        }
+      ],
+      "stats": {
+        "students": "学生ガイド",
+        "success": "成功率",
+        "uni": "提携大学"
+      }
+    },
+    "partner": {
+      "bgtext": "パートナー",
+      "heading": "提携大学",
+      "subheading": "著名な教育機関との名誉あるパートナーシップにより、学生に優れた学問、研究協力、露出の素晴らしい機会を提供します。"
+    },
+    "scholarhship": {
+      "heading": "奨学金と財政援助",
+      "button": "奨学金と財政援助プログラムについてもっと詳しく見る",
+      "subheading": "簡素化された申請プロセスに従って奨学金を獲得しましょう。専門チームが各ステップを丁寧にサポートし、成功の可能性を最大限に高めます。"
+    },
+    "faq": {
+      "heading1": "よくある質問",
+      "heading2": "よくある質問"
+    },
+    "criteria": {
+      "heading": "資格基準",
+      "subheading": "奨学金プログラムの資格を得るには、これらの必須要件を満たしてください。",
+      "list": [
+        {
+          "title": "学術的優秀さ",
+          "description": "応募者は、これまでの教育を通じて優れた学業成績と一貫して高い成績を維持している必要があります。"
+        },
+        {
+          "title": "言語能力",
+          "description": "プログラムの要件に応じて、日本語または英語能力（JLPT、IELTS、またはTOEFL）が証明される。"
+        },
+        {
+          "title": "学習計画または目的の表明",
+          "description": "あなたの目標、動機、学問的な興味を明確に述べた、よく書かれた学習計画。"
+        },
+        {
+          "title": "良い行為",
+          "description": "応募者は懲戒記録がなく、文化的および組織的価値観を尊重する必要があります。"
+        },
+        {
+          "title": "年齢制限",
+          "description": "ほとんどの教育機関では最低年齢の要件があり、入学時に 18 歳以上であることがほとんどです。"
+        }
+      ]
+    },
+    "apply": {
+      "heading": "応募方法",
+      "subheading": "私たちの簡単な手順に従って、奨学金の機会を利用して日本への留学の旅を始めましょう。",
+      "list": [
+        {
+          "title": "奨学金の空き状況を確認する",
+          "description": "応募者は、これまでの教育を通じて優れた学業成績と一貫して高い成績を維持している必要があります。"
+        },
+        {
+          "title": "カウンセリングセッション",
+          "description": "プログラムの要件に応じて、日本語または英語能力（JLPT、IELTS、またはTOEFL）が証明される。"
+        },
+        {
+          "title": "文書の準備",
+          "description": "あなたの目標、動機、学問的な興味を明確に述べた、よく書かれた学習計画。"
+        },
+        {
+          "title": "申請書の提出",
+          "description": "応募者は懲戒記録がなく、文化的および組織的価値観を尊重する必要があります。"
+        },
+        {
+          "title": "面接準備",
+          "description": "ほとんどの教育機関では最低年齢の要件があり、入学時に 18 歳以上であることがほとんどです。"
+        }
+      ]
+    },
+    "types": {
+      "heading1": "の種類の",
+      "heading2": "奨学金",
+      "typesdata": [
+        {
+          "title": "成績に基づく奨学金",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim temporibus veritatis doloremque odit, nemo quos nisi laudantium? Similique ex esse laboriosam ducimus accusamus, quasi corrupti repellendus, assumenda dicta, blanditiis eveniet aperiam aliquid ipsa cupiditate. Enim culpa ipsum quia fugit, similique suscipit alias eum aut sequi, veritatis provident, a perspiciatis voluptatem?",
+          "image": "/conunselling.jpg"
+        },
+        {
+          "title": "ニーズベースの奨学金",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum at itaque veniam nihil, quaerat assumenda ex qui cumque pariatur voluptatibus distinctio quia eum repellendus molestias! Libero architecto nisi neque quae consequuntur debitis! Alias ex hic, velit minus et ut, atque ad optio minima molestias officia similique amet quisquam recusandae sit!",
+          "image": "/departure.jpg"
+        },
+        {
+          "title": "語学力奨学金",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eum vel dolores harum sint inventore explicabo saepe aspernatur mollitia, tenetur molestiae asperiores impedit. Dolorem eveniet nemo ipsam minus doloribus iusto ipsum laboriosam! Saepe, repudiandae ex quas reprehenderit voluptas pariatur molestiae amet provident totam explicabo ipsam quia, consectetur laborum assumenda error.",
+          "image": "/team.jpg"
+        }
+      ]
+    }
   }
 }

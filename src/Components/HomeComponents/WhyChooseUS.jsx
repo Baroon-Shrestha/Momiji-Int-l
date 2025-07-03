@@ -18,8 +18,10 @@ export default function WhyChooseUS() {
               <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
                 {t("home.why.heading")}
               </h1>
-              <p className="text-xl max-w-4xl font-extralight mx-auto">
-                {t("home.why.subheading")}
+              <p className="text-xl text-white max-w-5xl text-center font-extralight mx-auto">
+                {t("home.why.subheading1")}
+                <br />
+                <br /> {t("home.why.subheading2")}
               </p>
             </div>
 

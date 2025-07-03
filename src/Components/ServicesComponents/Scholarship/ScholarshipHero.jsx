@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function MainServices() {
+  const { t } = useTranslation();
   return (
     <>
       <section className="mb-16 relative w-full bg-gradient-to-r from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white overflow-hidden">
@@ -17,12 +19,10 @@ export default function MainServices() {
         {/* Content */}
         <div className=" relative z-10 container mx-auto px-4 py-20 flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
-            Scholarship & Financial Aid
+            {t("services.scholarhship.heading")}
           </h1>
           <p className="text-lg md:text-xl max-w-2xl font-extralight">
-            Follow our streamlined application process to secure your
-            scholarship. Our expert team will guide you through each step to
-            maximize your chances of success.
+            {t("services.scholarhship.subheading")}
           </p>
         </div>
       </section>

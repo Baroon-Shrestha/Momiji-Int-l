@@ -1,5 +1,8 @@
 {
+  "momiji": { "head": "Momiji International Academy" },
   "nav": {
+    "quick": "Quick Links",
+    "touch": "Get In Touch",
     "home": "Home",
     "about": "About Us",
     "gallery": "Gallery",
@@ -19,6 +22,16 @@
     "scholarsubhead": "Scholarship & Financial Aid",
     "faqhead": "FAQ",
     "faqsubhead": "Querries and Support from our side"
+  },
+  "footer": {
+    "cta": {
+      "heading": "Need Quick Help?",
+      "subheading": "We're here to assist you with any questions about Momiji International Academy.",
+      "buttons": {
+        "call": "Call Now",
+        "email": "Send Email"
+      }
+    }
   },
   "notfound": {
     "heading": "Page Not Found",
@@ -83,7 +96,8 @@
     },
     "why": {
       "heading": "Why Choose Momiji?",
-      "subheading": "Our biggest strength lies in offering accurate, up-to-date information about Japanese institutions, entry requirements, and cultural adaptation. With an experienced and passionate team, we ensure a seamless experience that saves you time and gives you confidence.",
+      "subheading1": "At Momiji, our greatest strength lies in delivering accurate, up-to-date guidance on Japanese institutions, entry requirements, and cultural adaptation. Backed by an experienced and passionate team, we ensure a smooth and efficient process that saves you time and empowers you with confidence.",
+      "subheading2": "But beyond expertise, we treat your dream as our own. Choosing us means gaining not just a consultancy—but a dedicated partner genuinely committed to shaping your future in Japan.",
       "highlights": {
         "items": [
           {
@@ -185,5 +199,177 @@
   "coordinator": {
     "heading": "Message from our Co-ordinator",
     "subheading": "Words of inspiration from our Co-ordinator—guiding ambitious minds toward brighter futures and new horizons in Japan."
+  },
+  "services": {
+    "hero": { "heading": "Our Services", "subheading": "" },
+    "proven": {
+      "heading1": "Our",
+      "heading2": "Proven process",
+      "heading3": "for excellence"
+    },
+    "servicesContent": {
+      "sections": [
+        {
+          "title": "Free 1-on-1 Counseling — Let’s Talk!",
+          "content": "We start by truly getting to know you — your goals, your dreams, and what you’re passionate about. Whether you’re still confused about which university to choose or what course is best for your future, we’ll help you figure it out.",
+          "conv": "We’re committed to making your journey stress-free right from day one."
+        },
+        {
+          "title": "University & Course Selection in Japan — Personalized Guidance",
+          "content": "Japan has a wide range of top universities and language schools, each with its own strengths. Based on your interests, budget, and long-term goals, we’ll help you choose the best-fit institution and course — whether it’s a language program, vocational course, or full degree.",
+          "conv": "We recommend what’s best for you — not just what’s popular."
+        },
+        {
+          "title": "Document Preparation — No Confusion, No Mistakes",
+          "content": "We’ll guide you through every document you need — from your SOP (Statement of Purpose) to recommendation letters, CV, and more. Plus, we’ll review and polish them so you make a strong impression.",
+          "conv": "No more guessing what to write — we’ll help you present your story perfectly."
+        },
+        {
+          "title": "Fast & Smooth Application Process",
+          "content": "Once your documents are ready, we handle the entire application process — making sure everything is submitted correctly and on time. You’ll be informed at every step.",
+          "conv": "Your application is handled with precision and professionalism — no delays, no confusion."
+        },
+        {
+          "title": "Interview & Test Guidance",
+          "content": "Need to take NAT, JLPT, or prepare for your student visa interview? Don’t worry — we offer mock tests, expert coaching, and personalized practice sessions to ensure you are fully prepared.",
+          "conv": "We help you boost your confidence, not just your scores."
+        },
+        {
+          "title": "Visa Filing to Departure — Full Support",
+          "content": "We handle your visa application, double-check everything, and guide you until it’s approved. Once you’re ready to go, we’ll help you with ticketing, accommodation, and even pre-departure orientation.",
+          "conv": "Yes, we’ll still be with you even after you land."
+        }
+      ]
+    },
+    "motto": {
+      "heading1": "Your Success",
+      "heading2": "is our main goal.",
+      "subheading": "At our consultancy, we provide end-to-end support to students aspiring to pursue higher education in Japan. Whether in-person or virtually (on request), our dedicated team assists you throughout the entire journey—from university selection to post-arrival settlement.",
+      "servicehead": "We Will Be There With You At Your Each Step",
+      "services": [
+        {
+          "icon": "🎓",
+          "title": "Academic & Career Counseling",
+          "description": "Receive tailored advice to align your academic path with career opportunities in Japan."
+        },
+        {
+          "icon": "📝",
+          "title": "Document & Application Assistance",
+          "description": "Guided support for your university applications, SOPs, and paperwork."
+        },
+        {
+          "icon": "🎌",
+          "title": "Language & Test Training",
+          "description": "Prepare for JLPT, NAT, and interview requirements with expert-led training."
+        },
+        {
+          "icon": "📋",
+          "title": "Visa Filing & Embassy Process",
+          "description": "Stress-free support for student visa filing, embassy requirements, and documentation."
+        },
+        {
+          "icon": "✈️",
+          "title": "Pre-departure Orientation",
+          "description": "Learn about life in Japan—culture, budgeting, rules, and living arrangements."
+        },
+        {
+          "icon": "🏠",
+          "title": "Post-arrival Support in Japan",
+          "description": "Help with accommodations, part-time jobs, insurance, and adapting to Japanese life."
+        }
+      ],
+      "stats": {
+        "students": "Students Guided",
+        "success": "Success Rate",
+        "uni": "Partner Universities"
+      }
+    },
+    "partner": {
+      "bgtext": "Partner",
+      "heading": "Partner Universities",
+      "subheading": "Prestigious partnerships with renowned institutions that provide our students with exceptional opportunities for academic excellence, research collaboration, and exposure."
+    },
+    "scholarhship": {
+      "heading": "Scholarship & Financial Aids",
+      "button": "Learn more about scholarships and financial aid programs",
+      "subheading": "Follow our streamlined application process to secure your scholarship. Our expert team will guide you through each step to maximize your chances of success."
+    },
+    "faq": {
+      "heading1": "Frequently Asked Questions",
+      "heading2": "FAQs"
+    },
+    "criteria": {
+      "heading": "Eligibility criteria",
+      "subheading": "Meet these essential requirements to be eligible for scholarship programs",
+      "list": [
+        {
+          "title": "Academic Excellence",
+          "description": "Applicants must have a strong academic record and consistently high grades throughout their previous education."
+        },
+        {
+          "title": "Language Proficiency",
+          "description": "Demonstrated Japanese or English proficiency (JLPT, IELTS, or TOEFL) depending on the program requirements."
+        },
+        {
+          "title": "Study Plan or Statement of Purpose",
+          "description": "A well-written study plan that clearly states your goals, motivations, and academic interests."
+        },
+        {
+          "title": "Good Conduct",
+          "description": "Applicants must have a clean disciplinary record and show respect for cultural and institutional values."
+        },
+        {
+          "title": "Age Requirement",
+          "description": "Most institutions have a minimum age requirement, often 18 years or older at the time of enrollment."
+        }
+      ]
+    },
+    "apply": {
+      "heading": "How To Apply",
+      "subheading": "Follow our simple steps to begin your journey to study in Japan with Scholarship opportunities.",
+      "list": [
+        {
+          "title": "Explore Scholarship Availability",
+          "description": "Applicants must have a strong academic record and consistently high grades throughout their previous education."
+        },
+        {
+          "title": "Counseling Session",
+          "description": "Demonstrated Japanese or English proficiency (JLPT, IELTS, or TOEFL) depending on the program requirements."
+        },
+        {
+          "title": "Document Preparation",
+          "description": "A well-written study plan that clearly states your goals, motivations, and academic interests."
+        },
+        {
+          "title": "Application Submission",
+          "description": "Applicants must have a clean disciplinary record and show respect for cultural and institutional values."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Most institutions have a minimum age requirement, often 18 years or older at the time of enrollment."
+        }
+      ]
+    },
+    "types": {
+      "heading1": "Types of",
+      "heading2": "Scholarship",
+      "typesdata": [
+        {
+          "title": "Merit-Based Scholarship",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim temporibus veritatis doloremque odit, nemo quos nisi laudantium? Similique ex esse laboriosam ducimus accusamus, quasi corrupti repellendus, assumenda dicta, blanditiis eveniet aperiam aliquid ipsa cupiditate. Enim culpa ipsum quia fugit, similique suscipit alias eum aut sequi, veritatis provident, a perspiciatis voluptatem?",
+          "image": "/conunselling.jpg"
+        },
+        {
+          "title": "Need-Based Scholarship",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum at itaque veniam nihil, quaerat assumenda ex qui cumque pariatur voluptatibus distinctio quia eum repellendus molestias! Libero architecto nisi neque quae consequuntur debitis! Alias ex hic, velit minus et ut, atque ad optio minima molestias officia similique amet quisquam recusandae sit!",
+          "image": "/departure.jpg"
+        },
+        {
+          "title": "Language Proficiency Scholarships",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eum vel dolores harum sint inventore explicabo saepe aspernatur mollitia, tenetur molestiae asperiores impedit. Dolorem eveniet nemo ipsam minus doloribus iusto ipsum laboriosam! Saepe, repudiandae ex quas reprehenderit voluptas pariatur molestiae amet provident totam explicabo ipsam quia, consectetur laborum assumenda error.",
+          "image": "/team.jpg"
+        }
+      ]
+    }
   }
 }
