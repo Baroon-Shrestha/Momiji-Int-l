@@ -1,17 +1,19 @@
 <!-- public/admin/index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Momiji CMS Admin</title>
+    <meta charset="UTF-8" />
+    <title>Momiji CMS</title>
   </head>
   <body>
     <script>
-      // Redirect password recovery to /admin with the recovery token
+      // Handle password recovery token redirect
       if (window.location.hash.includes("recovery_token")) {
         window.location.href = "/admin" + window.location.hash;
-      } else {
-        window.location.href = "/admin";
       }
     </script>
+
+    <!-- Netlify CMS Script -->
+    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
   </body>
 </html>
