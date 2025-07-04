@@ -11,27 +11,27 @@ export default function Introduction() {
       <div className="flex flex-col items-center gap-6">
         <div className="text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
-            {content.intro.heading1 || t("home.intro.heading1")}{" "}
+            {content.intro_heading1 || t("home.intro.heading1")}{" "}
             <span className="text-[#F78C1F]">{t("home.intro.heading2")}</span>
           </h1>
           <p className="mt-2 text-lg sm:text-xl md:text-2xl font-medium text-gray-700">
-            {content.intro.subheading || t("home.intro.subheading")}
+            {content.intro_subheading || t("home.intro.subheading")}
           </p>
         </div>
 
         <p className="text-base sm:text-lg md:text-xl font-bolder text-justify text-gray-700 max-w-7xl">
-          {content.intro.paragraph1 || t("home.intro.paragraph1")} <br />
+          {content.intro_paragraph1 || t("home.intro.paragraph1")} <br />
           <br />
-          {content.intro.paragraph2 || t("home.intro.paragraph2")}
+          {content.intro_paragraph2 || t("home.intro.paragraph2")}
           <br />
           <br />
           <div className="text-center">
             <span className="text-[#F78C1F] font-bold">
-              {content.intro.ending1 || t("home.intro.ending1")}{" "}
+              {content.intro_ending1 || t("home.intro.ending1")}{" "}
             </span>
             <br />{" "}
             <span className="font-extralight text-center">
-              "{content.intro.ending2 || t("home.intro.ending2")}"
+              "{content.intro_ending2 || t("home.intro.ending2")}"
             </span>
           </div>
         </p>
