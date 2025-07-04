@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useCmsContent } from "../HelperComponents/useCmsContent";
 
 export default function HeroSection({
   images = [],
@@ -11,6 +12,7 @@ export default function HeroSection({
 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(1);
+  const content = useCmsContent();
 
   const { t } = useTranslation(); // 👈 ADD THIS
 
@@ -70,7 +72,10 @@ export default function HeroSection({
         <div className="container mx-auto pl-4 text-left">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
-              <span className="text-2xl">{t("home.hero.opening")}</span> <br />
+              <span className="text-2xl">
+                {content.hero.opening || t("home.hero.opening")}
+              </span>{" "}
+              <br />
               <Typewriter
                 options={{
                   strings: [
@@ -83,12 +88,12 @@ export default function HeroSection({
               />
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 drop-shadow-lg font-extralight">
-              {t("home.hero.title")}
+              {content.hero.title || t("home.hero.title")}
             </p>
             <Link to="/about">
               <div className="flex flex-col w-[70vw] md:w-[20vw] gap-4">
                 <button className="bg-gradient-to-b from-[#F05A22] via-[#F78C1F] to-[#FBC21B] text-white px-8 py-4 rounded-lg font-bold text-lg md:text-xl transform hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl">
-                  {t("home.hero.button")}
+                  {content.hero.button || t("home.hero.button")}
                 </button>
               </div>
             </Link>
