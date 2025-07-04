@@ -1,13 +1,11 @@
-[build]
-  publish = "dist" # or "build" if using CRA or Vite
-  command = "npm run build"
+[[redirects]]
+  from = "/#invite_token=:token"
+  to = "/admin/#invite_token=:token"
+  status = 301
+  force = true
 
 [[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/#recovery_token=:token"
+  to = "/admin/#recovery_token=:token"
+  status = 301
+  force = true
