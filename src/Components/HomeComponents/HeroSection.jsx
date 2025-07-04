@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useCmsContent } from "../HelperComponents/useCmsContent";
+import { useCmsContent } from "../../Hooks/useCmsContent";
 
 export default function HeroSection({
   images = [],
@@ -72,10 +72,7 @@ export default function HeroSection({
         <div className="container mx-auto pl-4 text-left">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
-              <span className="text-2xl">
-                {content.hero_opening || t("home.hero.opening")}
-              </span>{" "}
-              <br />
+              <span className="text-2xl">{content.hero_opening}</span> <br />
               <Typewriter
                 options={{
                   strings: [
