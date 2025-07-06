@@ -2,15 +2,12 @@
   publish = "dist"
   command = "npm run build"
 
-[redirects]
-  # Let React Router handle other routes
-  [[redirects]]
-    from = "/*"
-    to = "/index.html"
-    status = 200
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [identity]
-  # Netlify Identity routing to CMS
   invite_redirect = "/admin/#"
   recovery_redirect = "/admin/#"
   email_change_redirect = "/admin/#"
