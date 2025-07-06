@@ -1,0 +1,5 @@
+[identity]
+  # Redirect invite/recovery links to /admin
+  invite_redirect = "/admin/#"
+  email_change_redirect = "/admin/#"
+  recovery_redirect = "/admin/#"

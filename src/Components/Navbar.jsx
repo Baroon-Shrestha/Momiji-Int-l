@@ -72,7 +72,7 @@ export default function Navbar() {
             <img
               src={logo}
               alt=""
-              className="w-1/3 transition-transform duration-300 group-hover:scale-105"
+              className="h-[7vh] md:h-[10vh] transition-transform duration-300 group-hover:scale-105"
             />
           </NavLink>
 
